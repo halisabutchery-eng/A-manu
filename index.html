@@ -234,6 +234,57 @@
     body.is-scrolled .cat.collapsed .cat-img{
       height:110px !important;
     }
+
+    /* כפתור סל צף */
+    #cartFab{
+      position:fixed;
+      left:16px;
+      top:16px;
+      bottom:auto;
+      z-index:9999;
+      display:none;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      background:var(--paper);
+      border:1px solid var(--line);
+      color:var(--ink);
+      box-shadow:0 10px 26px rgba(0,0,0,.35);
+      cursor:pointer;
+    }
+    #cartFab .badge{
+      background:var(--cta);
+      color:#fff;
+      border-radius:999px;
+      padding:2px 8px;
+      font-size:12px;
+      font-weight:800;
+      line-height:18px;
+      min-width:22px;
+      text-align:center;
+    }
+    #cartFab svg{
+      width:18px;
+      height:18px;
+      display:block;
+      opacity:.9;
+    }
+    #cartFab:focus{
+      outline:none;
+      box-shadow:0 0 0 3px rgba(60,207,145,.18), 0 10px 26px rgba(0,0,0,.35);
+    }
+    @media print{ #cartFab{display:none!important} }
+
+    /* היילייט לסל */
+    .cart.cart-flash{
+      animation: cartFlash 1200ms ease;
+    }
+    @keyframes cartFlash{
+      0%   { box-shadow:0 0 0 0 rgba(60,207,145,0), 0 0 0 rgba(0,0,0,0); }
+      25%  { box-shadow:0 0 0 4px rgba(60,207,145,.18), 0 14px 34px rgba(0,0,0,.35); }
+      100% { box-shadow:0 0 0 0 rgba(60,207,145,0), 0 3px 12px rgba(0,0,0,.25); }
+    }
   </style>
 </head>
 
@@ -304,6 +355,15 @@
       </aside>
     </div>
   </div>
+
+  <!-- כפתור סל צף (חייב להיות לפני הסקריפט כדי שה-binding לא יקבל null) -->
+  <button id="cartFab" type="button" aria-label="מעבר לסל">
+    <span class="badge" id="cartFabBadge">0</span>
+    <span style="font-weight:800;">סל</span>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="currentColor" d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2Zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2ZM7.16 14h9.92c.75 0 1.4-.41 1.74-1.03L21 7H6.21L5.27 5H2v2h2l3.6 7.59-1.35 2.44C5.52 18.37 6.48 20 8 20h12v-2H8l1.16-2Z"/>
+    </svg>
+  </button>
 
   <script>
     // וואטסאפ – עספור
@@ -418,7 +478,7 @@
     const keyOf = i => `${i.name}|${i.category}`;
 
     const isUnitItem = item => item.qtyMode === 'unit';
-    const unitLabelOf = item => isUnitItem(item) ? 'יח׳' : 'ק״ג';
+    const unitLabelOf = item => isUnitItem(item) ? 'יח׳' : 'ק"ג';
 
     const roundToStep = (n, step) => Math.round((Number(n)||0) / step) * step;
 
@@ -445,9 +505,9 @@
             qty: it.qty,
             qtyMode: it.qtyMode || null
           })),
-          notes: notesArea.value || "",
+          notes: notesArea?.value || "",
           fulfillment: document.querySelector('input[name="fulfillment"]:checked')?.value || "",
-          address: addressArea.value || ""
+          address: addressArea?.value || ""
         };
         localStorage.setItem(LS_KEY, JSON.stringify(payload));
       } catch(e){}
@@ -466,7 +526,7 @@
           });
         }
 
-        if(typeof payload.notes === 'string') notesArea.value = payload.notes;
+        if(typeof payload.notes === 'string' && notesArea) notesArea.value = payload.notes;
 
         if(payload.fulfillment){
           const inp = document.querySelector(`input[name="fulfillment"][value="${payload.fulfillment}"]`);
@@ -476,7 +536,7 @@
           if(def) def.checked = true;
         }
 
-        if(typeof payload.address === 'string') addressArea.value = payload.address;
+        if(typeof payload.address === 'string' && addressArea) addressArea.value = payload.address;
 
         syncFulfillmentUI();
         renderCart();
@@ -489,7 +549,7 @@
         lbl.classList.toggle('is-active', lbl.dataset.radio === val);
       });
 
-      addressBlock.style.display = (val === 'משלוח') ? 'flex' : 'none';
+      if(addressBlock) addressBlock.style.display = (val === 'משלוח') ? 'flex' : 'none';
       saveState();
     }
 
@@ -521,7 +581,40 @@
       saveState();
     }
 
+    // ===== סל צף + גלילה + היילייט (תוספת בלבד) =====
+    const cartFab = document.getElementById('cartFab');
+    const cartFabBadge = document.getElementById('cartFabBadge');
+    const cartBox = document.querySelector('aside.cart');
+
+    function updateCartFab(){
+      if(!cartFab || !cartFabBadge) return;
+      const itemsCount = cart.size; // כמה פריטים שונים בסל
+      cartFab.style.display = itemsCount > 0 ? 'flex' : 'none';
+      cartFabBadge.textContent = String(itemsCount);
+    }
+
+    function flashCart(){
+      if(!cartBox) return;
+      cartBox.classList.remove('cart-flash');
+      void cartBox.offsetWidth; // reflow כדי לאפשר אנימציה מחדש
+      cartBox.classList.add('cart-flash');
+    }
+
+    if(cartFab){
+      cartFab.addEventListener('click', ()=>{
+        if(!cartBox) return;
+        cartBox.scrollIntoView({ behavior:'smooth', block:'start' });
+        setTimeout(flashCart, 450);
+
+        if(typeof gtag === 'function'){
+          gtag('event', 'click_cart_fab', { event_category:'navigation', event_label:'Floating Cart Button' });
+        }
+      });
+    }
+    // ===============================================
+
     function renderCart(){
+      if(!cartList) return;
       cartList.innerHTML = '';
       Array.from(cart.values()).forEach(it=>{
         const line = document.createElement('div');
@@ -544,6 +637,9 @@
         line.append(left, priceEl, del);
         cartList.append(line);
       });
+
+      // תוספת: עדכון כפתור סל צף
+      updateCartFab();
     }
 
     function validateFulfillment(){
@@ -553,10 +649,10 @@
         return false;
       }
       if(fulfillment === 'משלוח'){
-        const addr = (addressArea.value||"").trim();
+        const addr = (addressArea?.value||"").trim();
         if(!addr){
           alert("במשלוח חובה למלא כתובת למשלוח");
-          addressArea.focus();
+          addressArea?.focus();
           return false;
         }
       }
@@ -571,7 +667,7 @@
       lines.push(`סוג הזמנה: ${fulfillment || "—"}`);
 
       if(fulfillment === 'משלוח'){
-        const addr = (addressArea.value||"").trim();
+        const addr = (addressArea?.value||"").trim();
         if(addr) lines.push(`כתובת למשלוח: ${addr}`);
       }
 
@@ -579,7 +675,7 @@
         lines.push(`• ${it.category} | ${it.name} × ${fmtQty(it, it.qty)} — ${money(it.price * (Number(it.qty)||0))}`);
       });
 
-      const notes = (notesArea.value||"").trim();
+      const notes = (notesArea?.value||"").trim();
       if(notes){
         lines.push("");
         lines.push("הערות לקצב:");
@@ -612,42 +708,48 @@
       fallbackCopy(text);
     }
 
-    copyBtn.addEventListener('click', async ()=>{
-      if(!validateFulfillment()) return;
+    if(copyBtn){
+      copyBtn.addEventListener('click', async ()=>{
+        if(!validateFulfillment()) return;
 
-      const text = buildText();
-      try{
-        await copyToClipboard(text);
-        copyBtn.textContent="הועתק ✓";
-        setTimeout(()=>copyBtn.textContent="העתקת סל",900);
-      } catch(e){
-        copyBtn.textContent="לא הועתק";
-        setTimeout(()=>copyBtn.textContent="העתקת סל",1200);
-      }
+        const text = buildText();
+        try{
+          await copyToClipboard(text);
+          copyBtn.textContent="הועתק ✓";
+          setTimeout(()=>copyBtn.textContent="העתקת סל",900);
+        } catch(e){
+          copyBtn.textContent="לא הועתק";
+          setTimeout(()=>copyBtn.textContent="העתקת סל",1200);
+        }
 
-      if(typeof gtag === 'function'){
-        gtag('event', 'copy_cart', { event_category:'engagement', event_label:'Cart Copied' });
-      }
-    });
+        if(typeof gtag === 'function'){
+          gtag('event', 'copy_cart', { event_category:'engagement', event_label:'Cart Copied' });
+        }
+      });
+    }
 
-    waBtn.addEventListener('click', ()=>{
-      if(!validateFulfillment()) return;
+    if(waBtn){
+      waBtn.addEventListener('click', ()=>{
+        if(!validateFulfillment()) return;
 
-      if(typeof gtag === 'function'){
-        gtag('event', 'click_wa_button', { event_category:'engagement', event_label:'WhatsApp Send Button' });
-      }
-      window.open(WA_BASE + encodeURIComponent(buildText()), "_blank");
-    });
+        if(typeof gtag === 'function'){
+          gtag('event', 'click_wa_button', { event_category:'engagement', event_label:'WhatsApp Send Button' });
+        }
+        window.open(WA_BASE + encodeURIComponent(buildText()), "_blank");
+      });
+    }
 
-    clearBtn.addEventListener('click', ()=>{
-      clearCart();
-      if(typeof gtag === 'function'){
-        gtag('event', 'clear_cart', { event_category:'engagement', event_label:'Cart Cleared' });
-      }
-    });
+    if(clearBtn){
+      clearBtn.addEventListener('click', ()=>{
+        clearCart();
+        if(typeof gtag === 'function'){
+          gtag('event', 'clear_cart', { event_category:'engagement', event_label:'Cart Cleared' });
+        }
+      });
+    }
 
-    notesArea.addEventListener('input', saveState);
-    addressArea.addEventListener('input', saveState);
+    notesArea?.addEventListener('input', saveState);
+    addressArea?.addEventListener('input', saveState);
 
     fulfillmentInputs.forEach(inp=>{
       inp.addEventListener('change', ()=>{
@@ -669,8 +771,8 @@
     }
 
     function apply(){
-      const term = (q.value||"").trim().toLowerCase();
-      const s = sortSel.value;
+      const term = (q?.value||"").trim().toLowerCase();
+      const s = sortSel?.value;
 
       let rows = DATA.filter(x=>{
         if(!term) return true;
@@ -700,14 +802,14 @@
     }
 
     function render(rows, cmp){
-      countEl.textContent = `${rows.length.toLocaleString('he-IL')} פריטים`;
+      if(countEl) countEl.textContent = `${rows.length.toLocaleString('he-IL')} פריטים`;
       const by = groupByCategory(rows);
       const rest = Array.from(by.keys())
         .filter(c=>!desiredOrder.includes(c))
         .sort((a,b)=>a.localeCompare(b,'he'));
       const order = [...desiredOrder.filter(c=>by.has(c)), ...rest];
 
-      cols.innerHTML = '';
+      if(cols) cols.innerHTML = '';
 
       order.forEach(cat=>{
         const section = document.createElement('section');
@@ -774,7 +876,7 @@
           } else {
             const isUnit = item.qtyMode === 'unit';
             const step = isUnit ? 1 : 0.5;
-            const unitLbl = isUnit ? 'יח׳' : 'ק״ג';
+            const unitLbl = isUnit ? 'יח׳' : 'ק"ג';
 
             const minus = document.createElement('button');
             minus.className='btn';
@@ -824,7 +926,7 @@
         });
 
         section.appendChild(list);
-        cols.appendChild(section);
+        cols?.appendChild(section);
 
         h2.addEventListener('click', ()=> toggleSection(section, h2, cat));
         h2.addEventListener('keydown', (e)=>{
@@ -859,14 +961,22 @@
     apply();
     renderCart();
 
-    q.addEventListener('input', ()=>{
+    q?.addEventListener('input', ()=>{
       apply();
       if(typeof gtag === 'function' && q.value.trim()){
         gtag('event', 'search', { event_category:'interaction', event_label: q.value.trim() });
       }
     });
 
-    sortSel.addEventListener('change', apply);
+    sortSel?.addEventListener('change', apply);
+
+    // ===== Smoke tests (בדיקות בסיסיות שלא משנות התנהגות) =====
+    (function runSmokeTests(){
+      const required = ['cols','q','sort','count','cartList','copyBtn','waBtn','clearBtn','notesArea','addressArea','fulfillmentWrap','cartFab','cartFabBadge'];
+      const missing = required.filter(id=>!document.getElementById(id));
+      console.assert(missing.length === 0, 'Missing DOM elements:', missing);
+      console.assert(typeof addToCart === 'function' && typeof renderCart === 'function', 'Core functions missing');
+    })();
   </script>
 </body>
 </html>
