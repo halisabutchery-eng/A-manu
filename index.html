@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>קטלוג הזמנות לוואטסאפ – אטליז חליסה עספור</title>
+  <title>קטלוג הזמנות בוואטאסף סניף עספור</title>
 
   <!-- Google tag (gtag.js) – GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRH9JB74R6"></script>
@@ -25,7 +25,7 @@
       --line:#e5e7eb;
       --accent:#008000; /* מחיר */
       --cta:#25D366;    /* כפתור וואטסאפ */
-      --add:#2563eb;    /* הוסף לסל (כחול) */
+      --add:#009DE0;    /* צבע וולט */
       --radius:14px;
     }
 
@@ -254,15 +254,6 @@
       opacity:1;
     }
 
-    body.is-scrolled .cat h2{
-      padding:8px 10px;
-      font-size:16px;
-      gap:6px;
-    }
-    body.is-scrolled .cat.collapsed .cat-img{
-      height:110px !important;
-    }
-
     /* כפתור סל צף */
     #cartFab{
       position:fixed;
@@ -392,6 +383,18 @@
       -webkit-overflow-scrolling:touch;
     }
 
+    /* תמונת קטגוריה בתוך ה-sheet (מצומצמת) */
+    .sheet-media{padding:0 12px 12px;}
+    .sheet-img{
+      width:100%;
+      height:140px;
+      object-fit:cover;
+      border-radius:14px;
+      display:block;
+      border:1px solid var(--line);
+      box-shadow:0 6px 18px rgba(0,0,0,.08);
+    }
+
     /* כרטיס מוצר בתוך ה-sheet */
     .item-card{
       background:var(--card);
@@ -410,7 +413,7 @@
     .item-info{min-width:0}
     .item-name{font-weight:900}
     .item-meta{margin-top:4px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    .item-price{font-weight:900;color:var(--accent)}
+    .item-price{font-weight:900;color:var(--add)}
     .item-unit{font-size:12px;color:var(--muted)}
 
     .stepper{
@@ -444,24 +447,40 @@
       color:var(--ink);
     }
 
-    .add-wide{
+    .item-controls{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      align-items:stretch;
+      flex-shrink:0;
+      min-width:150px;
+    }
+
+    /* כפתור קטן מתחת ל +/−, כמו וולט */
+    .add-mini{
       width:100%;
-      margin-top:10px;
       background:var(--add);
       border-color:var(--add);
       color:#fff;
       font-weight:900;
       border-radius:12px;
-      padding:10px 12px;
+      padding:8px 10px;
       cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      line-height:1;
       transition:filter .15s ease, transform .06s ease;
+      height:40px;
     }
-    .add-wide:hover{filter:brightness(.95)}
-    .add-wide:active{transform:translateY(1px)}
-    .add-wide:focus{
-      outline:none;
-      box-shadow:0 0 0 3px rgba(37,99,235,.18);
-    }
+    .add-mini:hover{filter:brightness(.96)}
+    .add-mini:active{transform:translateY(1px)}
+    .add-mini:focus{outline:none;box-shadow:0 0 0 3px rgba(0,157,224,.18)}
+    .add-mini:disabled{opacity:.55;cursor:not-allowed;filter:none;transform:none}
+
+    .add-mini__price{font-weight:900;white-space:nowrap}
+    .add-mini__label{font-weight:900;white-space:nowrap}
     /* =========================================== */
 
     /* היילייט לסל */
@@ -481,7 +500,7 @@
     <header style="display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap;margin-bottom:8px;">
       <div style="display:flex;align-items:center;gap:10px;">
         <img src="logo.webp" alt="אטליז חליסה עספור" style="height:48px;object-fit:contain;filter:drop-shadow(0 0 2px rgba(0,0,0,0.12));">
-        <h1 style="margin:0;font-size:22px;">קטלוג הזמנות לוואטסאפ</h1>
+        <h1 style="margin:0;font-size:22px;">קטלוג הזמנות בוואטאסף סניף עספור</h1>
       </div>
 
       <div class="tools">
@@ -566,6 +585,9 @@
         </div>
         <div id="sheetSubtitle" class="sheet-subtitle mini"></div>
       </div>
+    </div>
+    <div id="sheetMedia" class="sheet-media" hidden>
+      <img id="sheetImg" class="sheet-img" alt="" />
     </div>
     <div id="sheetBody" class="sheet-body"></div>
   </div>
@@ -681,6 +703,8 @@
     const sheetTitle = document.getElementById('sheetTitle');
     const sheetSubtitle = document.getElementById('sheetSubtitle');
     const sheetBadge = document.getElementById('sheetBadge');
+    const sheetMedia = document.getElementById('sheetMedia');
+    const sheetImg = document.getElementById('sheetImg');
     const sheetBody = document.getElementById('sheetBody');
 
     let CURRENT_BY = new Map();
@@ -1013,6 +1037,16 @@
       sheetTitle.textContent = cat;
       sheetSubtitle.textContent = `${list.length.toLocaleString('he-IL')} פריטים`;
       sheetBody.innerHTML = '';
+
+      // תמונת קטגוריה בתוך ה-sheet
+      const iconName = ICONS[cat] || null;
+      if(sheetMedia && sheetImg && iconName){
+        sheetImg.src = iconName;
+        sheetImg.alt = cat;
+        sheetMedia.hidden = false;
+      } else if(sheetMedia){
+        sheetMedia.hidden = true;
+      }
       // הערה כללית לקטגוריית עופות – ליד הכותרת
       if(sheetBadge){
         if(cat === 'עופות'){
@@ -1056,15 +1090,19 @@
 
         info.append(name, meta);
 
-        // שליטה בכמות (ליד שם המוצר)
-        let current = 0;
-        const stepper = document.createElement('div');
-        stepper.className = 'stepper';
-
+        // שליטה בכמות + כפתור הוספה (כמו באפליקציה)
         const isUnit = item.qtyMode === 'unit';
         const isNone = item.qtyMode === 'none';
         const step = isUnit ? 1 : 0.5;
         const unitLbl = isUnit ? 'יח׳' : 'ק"ג';
+
+        let current = isNone ? 1 : step;
+
+        const controls = document.createElement('div');
+        controls.className = 'item-controls';
+
+        const stepper = document.createElement('div');
+        stepper.className = 'stepper';
 
         const minus = document.createElement('button');
         minus.type = 'button';
@@ -1084,39 +1122,56 @@
           val.textContent = `${txt} ${unitLbl}`;
         };
 
+        const add = document.createElement('button');
+        add.type = 'button';
+        add.className = 'add-mini';
+
+        const updateAdd = ()=>{
+          const normalized = isNone ? 1 : normalizeQty(item, current);
+          const total = (Number(item.price)||0) * (Number(normalized)||0);
+          add.innerHTML = `<span class="add-mini__price">${money(total)}</span><span class="add-mini__label">הוספה להזמנה</span>`;
+          add.disabled = (!isNone && normalized <= 0);
+        };
+
         if(!isNone){
           renderVal();
+          stepper.append(minus, val, plus);
+
           minus.addEventListener('click', ()=>{
             current = Math.max(0, roundToStep(current - step, step));
             renderVal();
+            updateAdd();
           });
           plus.addEventListener('click', ()=>{
             current = roundToStep(current + step, step);
             renderVal();
+            updateAdd();
           });
-          stepper.append(minus, val, plus);
+
+          controls.appendChild(stepper);
         }
 
-        top.appendChild(info);
-        if(!isNone) top.appendChild(stepper);
-
-        const add = document.createElement('button');
-        add.type = 'button';
-        add.className = 'add-wide';
-        add.textContent = 'הוסף לסל';
+        updateAdd();
 
         add.addEventListener('click', ()=>{
           if(isNone){
             addToCart(item, 1);
+            updateAdd();
             return;
           }
           const normalized = normalizeQty(item, current);
           if(normalized > 0) addToCart(item, normalized);
-          current = 0;
+          current = step; // חוזר לברירת מחדל כמו באפליקציה
           renderVal();
+          updateAdd();
         });
 
-        card.append(top, add);
+        controls.appendChild(add);
+
+        top.appendChild(info);
+        top.appendChild(controls);
+
+        card.append(top);
         sheetBody.appendChild(card);
       });
 
@@ -1304,16 +1359,7 @@
       });
     }
 
-    // גלילה: מצב shrink
-    let last = false;
-    window.addEventListener('scroll', ()=>{
-      const now = window.scrollY > 20;
-      if(now !== last){
-        document.body.classList.toggle('is-scrolled', now);
-        last = now;
-      }
-    }, {passive:true});
-
+    
     // init
     loadState();
     if(!document.querySelector('input[name="fulfillment"]:checked')){
