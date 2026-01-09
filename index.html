@@ -393,6 +393,8 @@
       display:block;
       border:1px solid var(--line);
       box-shadow:0 6px 18px rgba(0,0,0,.08);
+      transition:height .18s ease, transform .18s ease, opacity .18s ease;
+      will-change:height, transform, opacity;
     }
 
     /* כרטיס מוצר בתוך ה-sheet */
@@ -709,6 +711,45 @@
 
     let CURRENT_BY = new Map();
     let CURRENT_CMP = (a,b)=>0;
+
+    // תמונת קטגוריה – דינמית בזמן גלילה בתוך ה-sheet (עדין)
+    let sheetScrollRaf = 0;
+    function resetSheetImage(){
+      if(!sheetImg) return;
+      sheetImg.style.height = '140px';
+      sheetImg.style.opacity = '1';
+      sheetImg.style.transform = 'none';
+    }
+    function onSheetScroll(){
+      if(!sheetBody || !sheetImg || sheetMedia?.hidden) return;
+      if(sheetScrollRaf) return;
+      sheetScrollRaf = requestAnimationFrame(()=>{
+        const y = sheetBody.scrollTop || 0;
+        const t = Math.min(1, y / 220); // כמה “עמוק” גללו
+        const h = 140 - (36 * t);        // 140px → ~104px
+        const op = 1 - (0.12 * t);       // פייד עדין
+        const ty = -8 * t;               // פרלקס קטן
+        const sc = 1 - (0.03 * t);       // סקייל עדין
+
+        sheetImg.style.height = `${Math.round(h)}px`;
+        sheetImg.style.opacity = String(op);
+        sheetImg.style.transform = `translateY(${ty}px) scale(${sc})`;
+
+        sheetScrollRaf = 0;
+      });
+    }
+    function bindSheetScroll(){
+      if(!sheetBody) return;
+      sheetBody.removeEventListener('scroll', onSheetScroll);
+      sheetBody.addEventListener('scroll', onSheetScroll, {passive:true});
+      onSheetScroll();
+    }
+    function unbindSheetScroll(){
+      if(!sheetBody) return;
+      sheetBody.removeEventListener('scroll', onSheetScroll);
+      if(sheetScrollRaf){ cancelAnimationFrame(sheetScrollRaf); sheetScrollRaf = 0; }
+      resetSheetImage();
+    }
 
     const fulfillmentLabels = Array.from(document.querySelectorAll('#fulfillmentWrap .radio'));
     const fulfillmentInputs = Array.from(document.querySelectorAll('input[name="fulfillment"]'));
@@ -1037,6 +1078,10 @@
       sheetTitle.textContent = cat;
       sheetSubtitle.textContent = `${list.length.toLocaleString('he-IL')} פריטים`;
       sheetBody.innerHTML = '';
+      // תמיד מתחילים מהטופ
+      try{ sheetBody.scrollTop = 0; } catch(e){}
+      resetSheetImage();
+      unbindSheetScroll();
 
       // תמונת קטגוריה בתוך ה-sheet
       const iconName = ICONS[cat] || null;
@@ -1044,8 +1089,10 @@
         sheetImg.src = iconName;
         sheetImg.alt = cat;
         sheetMedia.hidden = false;
+        bindSheetScroll();
       } else if(sheetMedia){
         sheetMedia.hidden = true;
+        unbindSheetScroll();
       }
       // הערה כללית לקטגוריית עופות – ליד הכותרת
       if(sheetBadge){
@@ -1188,6 +1235,7 @@
 
     function closeSheet(){
       if(!sheet || !sheetOverlay) return;
+      unbindSheetScroll();
       sheet.classList.remove('is-open');
       sheetOverlay.classList.remove('is-open');
       sheet.setAttribute('aria-hidden','true');
