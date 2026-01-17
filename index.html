@@ -1,1445 +1,1643 @@
 <!doctype html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>קטלוג הזמנות בוואטסאפ - סניף עספור</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>קטלוג הזמנות בוואטסאפ - סניף עספור</title>
 
-  <!-- Google tag (gtag.js) – GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRH9JB74R6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-LRH9JB74R6');
-  </script>
+<meta name="description" content="אטליז חליסה – סניף עספור. הזמנה מהירה בוואטסאפ: בוחרים מוצרים, מוסיפים לסל ושולחים לקצב. איסוף עצמי או משלוח (לפי זמינות)." />
+<meta name="theme-color" content="#ffffff" />
 
-  <style>
-    :root{
-      /* Asfour – Light theme */
-      --bg:#ffffff;
-      --paper:#f6f7f9;
-      --card:#ffffff;
-      --ink:#111827;
-      --muted:#6b7280;
-      --line:#e5e7eb;
-      --accent:#008000; /* מחיר */
-      --cta:#25D366;    /* כפתור וואטסאפ */
-      --add:#009DE0;    /* צבע וולט */
-      --radius:14px;
-    }
+<!-- Open Graph -->
+<meta property="og:locale" content="he_IL" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="קטלוג הזמנות בוואטסאפ – אטליז חליסה (סניף עספור)" />
+<meta property="og:description" content="בוחרים מוצרים, מוסיפים לסל ושולחים בוואטסאפ. סניף עספור – רח׳ עספור 19, חיפה." />
+<meta property="og:image" content="logo.webp" />
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--ink);
-      font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-    }
-    .wrap{max-width:1100px;margin:0 auto;padding:16px}
+<!-- Google tag (gtag.js) – GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LRH9JB74R6"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LRH9JB74R6');
+</script>
 
-    header{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:8px}
-    h1{margin:0;font-size:22px}
-    .tools{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+<!-- LocalBusiness Schema (Geo) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "אטליז חליסה – עספור",
+  "description": "אטליז חליסה – סניף עספור. הזמנות בוואטסאפ לאיסוף עצמי או משלוח (לפי זמינות).",
+  "telephone": "+972549392888",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "רח׳ עספור 19",
+    "addressLocality": "חיפה",
+    "addressCountry": "IL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 32.8200178,
+    "longitude": 34.993746
+  },
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"18:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}
+  ],
+  "hasMap": "https://www.google.com/maps/place/%D7%90%D7%98%D7%9C%D7%99%D7%96+%D7%97%D7%9C%D7%99%D7%A1%D7%94+-+%D7%A2%D7%A1%D7%A4%D7%95%D7%A8%E2%80%AD/@32.8200223,34.9963156,785m/data=!3m2!1e3!4b1!4m6!3m5!1s0x151dbb94e561895b:0x5b96d4fb5bc6f766!8m2!3d32.8200178!4d34.993746!16s%2Fg%2F11y0b8tcb6?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D",
+  "sameAs": [
+    "https://www.instagram.com/halisa_butchery_asfor/",
+    "https://www.facebook.com/profile.php?id=61581369802461"
+  ]
+}
+</script>
 
-    input,select,button,textarea{
-      background:var(--paper);
-      border:1px solid var(--line);
-      color:var(--ink);
-      border-radius:10px;
-      padding:10px 12px;
-      font-size:14px;
-      outline:none;
+<!-- FAQ Schema (AI/SEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "איזה נתח מומלץ לתנור?",
+      "acceptedAnswer": {"@type":"Answer","text":"לתנור ובישול ארוך בדרך כלל נמליץ על כתף מס׳ 5 / אוסובוקו / צוואר כבש / שוק כבש. כתבו בהערות מה אתם עושים ונכוון אתכם."}
+    },
+    {
+      "@type": "Question",
+      "name": "מה הכי מתאים לסטייק?",
+      "acceptedAnswer": {"@type":"Answer","text":"לסטייקים לרוב הולכים על אנטריקוט / טיבון / פיקנייה. רוצים משהו רך יותר או שומני יותר? כתבו לנו ונכוון."}
+    },
+    {
+      "@type": "Question",
+      "name": "אפשר לבקש חיתוך מיוחד?",
+      "acceptedAnswer": {"@type":"Answer","text":"כן. כתבו בהערות אם אתם רוצים קוביות/טחון/סטייקים/נתח שלם, ואיך אתם מבשלים."}
+    },
+    {
+      "@type": "Question",
+      "name": "איך מזמינים?",
+      "acceptedAnswer": {"@type":"Answer","text":"מוסיפים מוצרים לסל, בוחרים איסוף עצמי או משלוח (לפי זמינות), ולוחצים על שליחה ל־WhatsApp."}
+    },
+    {
+      "@type": "Question",
+      "name": "כמה זמן לוקח להכין הזמנה?",
+      "acceptedAnswer": {"@type":"Answer","text":"בדרך כלל אנחנו מכינים מהר, אבל בשעות עומס זה יכול לקחת יותר. אחרי שליחה בוואטסאפ נחזור אליכם כשמוכן."}
+    },
+    {
+      "@type": "Question",
+      "name": "איפה כדאי לקנות בשר?",
+      "acceptedAnswer": {"@type":"Answer","text":"הכי חשוב לקנות במקום שיש קצב שמכיר את הנתחים וחותך לפי הבישול שלכם. אצלנו בעספור תקבלו התאמה לפי צורך, לא רק מוצר."}
     }
-    textarea{resize:vertical}
+  ]
+}
+</script>
 
-    .cols{
-      display:grid;
-      gap:14px;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      align-items:start;
-    }
+<style>
+:root{
+/* Asfour – Light theme */
+--bg:#ffffff;
+--paper:#f6f7f9;
+--card:#ffffff;
+--ink:#111827;
+--muted:#6b7280;
+--line:#e5e7eb;
+--accent:#008000; /* מחיר */
+--cta:#25D366; /* כפתור וואטסאפ */
+--add:#009DE0; /* צבע וולט */
+--radius:14px;
+}
 
-    .cat{
-      background:var(--paper);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      display:flex;
-      flex-direction:column;
-      overflow:hidden;
-    }
+*{box-sizing:border-box}
+body{
+margin:0;
+background:var(--bg);
+color:var(--ink);
+font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+}
+.wrap{max-width:1100px;margin:0 auto;padding:16px}
 
-    .cat h2{
-      margin:0;
-      padding:12px 14px;
-      font-size:18px;
-      background:var(--paper);
-      border-bottom:1px solid var(--line);
-      position:sticky;
-      top:0;
-      z-index:3;
-      cursor:pointer;
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      outline:none;
-    }
+header{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:8px}
+h1{margin:0;font-size:22px}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
 
-    .cat h2:focus{
-      box-shadow:0 0 0 3px rgba(37,211,102,.18);
-      border-radius:12px;
-    }
+input,select,button,textarea{
+background:var(--paper);
+border:1px solid var(--line);
+color:var(--ink);
+border-radius:10px;
+padding:10px 12px;
+font-size:14px;
+outline:none;
+}
+textarea{resize:vertical}
 
-    /* אקורדיון */
-    .cat h2::after{
-      content:"▼";
-      font-size:12px;
-      opacity:.7;
-      align-self:flex-start;
-    }
-    .cat.collapsed h2::after{content:"▶";}
+.cols{
+display:grid;
+gap:14px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+align-items:start;
+}
 
-    .list{
-      padding:10px;
-      overflow:hidden;
-      max-height:0;
-      opacity:0;
-      transform-origin:bottom;
-      transform:translateY(10px) scaleY(0.96);
-      transition:max-height .38s ease, opacity .18s ease, transform .38s ease;
-      will-change:max-height, opacity, transform;
-    }
+.cat{
+background:var(--paper);
+border:1px solid var(--line);
+border-radius:var(--radius);
+display:flex;
+flex-direction:column;
+overflow:hidden;
+}
 
-    /* פתיחה מלמטה למעלה */
-    .cat:not(.collapsed) .list{
-      max-height:9999px;
-      opacity:1;
-      transform:translateY(0) scaleY(1);
-    }
+.cat h2{
+margin:0;
+padding:12px 14px;
+font-size:18px;
+background:var(--paper);
+border-bottom:1px solid var(--line);
+position:sticky;
+top:0;
+z-index:3;
+cursor:pointer;
+display:flex;
+flex-direction:column;
+gap:8px;
+outline:none;
+}
 
-    /* הערה כללית בתוך קטגוריה */
-    .cat-note{
-      background:var(--card);
-      border:1px dashed var(--line);
-      border-radius:10px;
-      padding:8px 10px;
-      margin:0 0 10px 0;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.4;
-    }
+.cat h2:focus{
+box-shadow:0 0 0 3px rgba(37,211,102,.18);
+border-radius:12px;
+}
 
-    .card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:12px;
-      padding:10px;
-      margin-bottom:10px;
-      box-shadow:0 2px 10px rgba(0,0,0,.06);
-    }
-    .row{display:flex;gap:8px;align-items:center;justify-content:space-between}
-    .name{font-weight:700}
-    .price{font-weight:800;color:var(--accent)}
-    .unit{font-size:12px;color:var(--muted);margin-inline-start:8px}
+/* אקורדיון */
+.cat h2::after{
+content:"▼";
+font-size:12px;
+opacity:.7;
+align-self:flex-start;
+}
+.cat.collapsed h2::after{content:"▶";}
 
-    .qty{display:flex;gap:6px;align-items:center;margin-top:8px;flex-wrap:wrap}
-    .qty .btn{padding:6px 10px;font-weight:700;font-size:15px;cursor:pointer}
-    .qty .val{min-width:92px;text-align:center;cursor:default}
-    .qty .add{margin-inline-start:auto;border-color:#d6dbe3}
+.list{
+padding:10px;
+overflow:hidden;
+max-height:0;
+opacity:0;
+transform-origin:bottom;
+transform:translateY(10px) scaleY(0.96);
+transition:max-height .38s ease, opacity .18s ease, transform .38s ease;
+will-change:max-height, opacity, transform;
+}
 
-    .cart{
-      position:sticky;
-      top:10px;
-      background:var(--paper);
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:12px;
-      min-width:260px;
-    }
-    .cart h3{margin:0 0 8px 0}
-    .cart-list{display:grid;gap:8px;margin:8px 0;max-height:38vh;overflow:auto}
-    .mini{font-size:12px;color:var(--muted)}
-    .line{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center}
-    .del{
-      background:transparent;
-      border:1px dashed var(--line);
-      padding:6px 8px;
-      border-radius:8px;
-      color:var(--muted);
-      font-size:12px;
-      cursor:pointer;
-    }
+/* פתיחה מלמטה למעלה */
+.cat:not(.collapsed) .list{
+max-height:9999px;
+opacity:1;
+transform:translateY(0) scaleY(1);
+}
 
-    .note{
-      margin-top:10px;
-      padding:10px;
-      border:1px dashed var(--line);
-      border-radius:10px;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.5;
-    }
-    .notes{margin-top:10px;display:flex;flex-direction:column;gap:6px}
-    .notes label{font-size:13px;color:var(--muted)}
+/* הערה כללית בתוך קטגוריה */
+.cat-note{
+background:var(--card);
+border:1px dashed var(--line);
+border-radius:10px;
+padding:8px 10px;
+margin:0 0 10px 0;
+color:var(--muted);
+font-size:13px;
+line-height:1.4;
+}
 
-    /* סוג הזמנה */
-    .fulfillment{
-      margin-top:10px;
-      padding:10px;
-      border:1px dashed var(--line);
-      border-radius:10px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .radios{display:flex;gap:8px;flex-wrap:wrap}
-    .radio{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      cursor:pointer;
-      color:var(--ink);
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:transparent;
-      user-select:none;
-    }
-    .radio input{accent-color:var(--cta);width:18px;height:18px}
-    .radio.is-active{
-      border-color:rgba(37,211,102,.55);
-      box-shadow:0 0 0 3px rgba(37,211,102,.12);
-    }
+.card{
+background:var(--card);
+border:1px solid var(--line);
+border-radius:12px;
+padding:10px;
+margin-bottom:10px;
+box-shadow:0 2px 10px rgba(0,0,0,.06);
+}
+.row{display:flex;gap:8px;align-items:center;justify-content:space-between}
+.name{font-weight:700}
+.price{font-weight:800;color:var(--accent)}
+.unit{font-size:12px;color:var(--muted);margin-inline-start:8px}
 
-    .cta{
-      background:var(--cta);
-      border-color:var(--cta);
-      color:#ffffff;
-      font-weight:800;
-    }
-    .actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.qty{display:flex;gap:6px;align-items:center;margin-top:8px;flex-wrap:wrap}
+.qty .btn{padding:6px 10px;font-weight:700;font-size:15px;cursor:pointer}
+.qty .val{min-width:92px;text-align:center;cursor:default}
+.qty .add{margin-inline-start:auto;border-color:#d6dbe3}
 
-    .two{display:grid;grid-template-columns:1fr 320px;gap:14px}
-    @media (max-width:900px){
-      .two{grid-template-columns:1fr}
-      .cart{position:static}
-    }
+.cart{
+position:sticky;
+top:10px;
+background:var(--paper);
+border:1px solid var(--line);
+border-radius:14px;
+padding:12px;
+min-width:260px;
+}
+.cart h3{margin:0 0 8px 0}
+.cart-list{display:grid;gap:8px;margin:8px 0;max-height:38vh;overflow:auto}
+.mini{font-size:12px;color:var(--muted)}
+.line{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center}
+.del{
+background:transparent;
+border:1px dashed var(--line);
+padding:6px 8px;
+border-radius:8px;
+color:var(--muted);
+font-size:12px;
+cursor:pointer;
+}
 
-    @media print{
-      .tools, .cta, #copyBtn, #waBtn, #clearBtn, #notesArea, #addressArea {display:none}
-      body{background:#fff;color:#000}
-      .card{box-shadow:none}
-    }
+.note{
+margin-top:10px;
+padding:10px;
+border:1px dashed var(--line);
+border-radius:10px;
+color:var(--muted);
+font-size:13px;
+line-height:1.5;
+}
+.notes{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.notes label{font-size:13px;color:var(--muted)}
 
-    /* תמונות קטגוריה */
-    .cat-img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-      border-radius:12px;
-      display:block;
-      margin:0;
-      transition:height .25s ease, opacity .25s ease, margin .25s ease;
-    }
-    .cat:not(.collapsed) .cat-img{
-      height:0 !important;
-      margin:0 !important;
-      opacity:0;
-      overflow:hidden;
-    }
-    .cat.collapsed .cat-img{
-      height:220px !important;
-      margin-bottom:8px !important;
-      opacity:1;
-    }
+/* סוג הזמנה */
+.fulfillment{
+margin-top:10px;
+padding:10px;
+border:1px dashed var(--line);
+border-radius:10px;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+align-items:center;
+}
+.radios{display:flex;gap:8px;flex-wrap:wrap}
+.radio{
+display:flex;
+gap:8px;
+align-items:center;
+cursor:pointer;
+color:var(--ink);
+padding:8px 10px;
+border-radius:999px;
+border:1px solid var(--line);
+background:transparent;
+user-select:none;
+}
+.radio input{accent-color:var(--cta);width:18px;height:18px}
+.radio.is-active{
+border-color:rgba(37,211,102,.55);
+box-shadow:0 0 0 3px rgba(37,211,102,.12);
+}
 
-    /* כפתור סל צף */
-    #cartFab{
-      position:fixed;
-      left:16px;
-      top:16px;
-      bottom:auto;
-      z-index:9999;
-      display:none;
-      align-items:center;
-      gap:8px;
-      padding:10px 12px;
-      border-radius:999px;
-      background:var(--paper);
-      border:1px solid var(--line);
-      color:var(--ink);
-      box-shadow:0 10px 26px rgba(0,0,0,.12);
-      cursor:pointer;
-    }
-    #cartFab .badge{
-      background:var(--cta);
-      color:#fff;
-      border-radius:999px;
-      padding:2px 8px;
-      font-size:12px;
-      font-weight:800;
-      line-height:18px;
-      min-width:22px;
-      text-align:center;
-    }
-    #cartFab svg{
-      width:18px;
-      height:18px;
-      display:block;
-      opacity:.9;
-    }
-    #cartFab:focus{
-      outline:none;
-      box-shadow:0 0 0 3px rgba(37,211,102,.18), 0 10px 26px rgba(0,0,0,.12);
-    }
-    @media print{ #cartFab{display:none!important} }
+.cta{
+background:var(--cta);
+border-color:var(--cta);
+color:#ffffff;
+font-weight:800;
+}
+.actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
 
-    /* ===== Bottom Sheet (פתיחה כמו אפליקציה) ===== */
-    body.sheet-open{overflow:hidden}
+two{display:grid;grid-template-columns:1fr 320px;gap:14px}
+.two{display:grid;grid-template-columns:1fr 320px;gap:14px}
+@media (max-width:900px){
+.two{grid-template-columns:1fr}
+.cart{position:static}
+}
 
-    .sheet-overlay{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.42);
-      opacity:0;
-      pointer-events:none;
-      transition:opacity .25s ease;
-      z-index:9998;
-    }
-    .sheet-overlay.is-open{
-      opacity:1;
-      pointer-events:auto;
-    }
+@media print{
+.tools, .cta, #copyBtn, #waBtn, #clearBtn, #notesArea, #addressArea {display:none}
+body{background:#fff;color:#000}
+.card{box-shadow:none}
+}
 
-    .sheet{
-      position:fixed;
-      left:0;
-      right:0;
-      bottom:0;
-      z-index:9999;
-      background:var(--paper);
-      border:1px solid var(--line);
-      border-bottom:0;
-      border-radius:18px 18px 0 0;
-      transform:translateY(105%);
-      transition:transform .32s cubic-bezier(.2,.9,.2,1);
-      box-shadow:0 -18px 60px rgba(0,0,0,.25);
-      max-height:86vh;
-      display:flex;
-      flex-direction:column;
-    }
-    .sheet.is-open{transform:translateY(0)}
+/* תמונות קטגוריה */
+.cat-img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:12px;
+display:block;
+margin:0;
+transition:height .25s ease, opacity .25s ease, margin .25s ease;
+}
+.cat:not(.collapsed) .cat-img{
+height:0 !important;
+margin:0 !important;
+opacity:0;
+overflow:hidden;
+}
+.cat.collapsed .cat-img{
+height:220px !important;
+margin-bottom:8px !important;
+opacity:1;
+}
 
-    .sheet-handle{
-      width:56px;
-      height:5px;
-      border-radius:999px;
-      background:rgba(17,24,39,.18);
-      margin:10px auto 6px;
-    }
+/* כפתור סל צף */
+#cartFab{
+position:fixed;
+left:16px;
+top:16px;
+bottom:auto;
+z-index:9999;
+display:none;
+align-items:center;
+gap:8px;
+padding:10px 12px;
+border-radius:999px;
+background:var(--paper);
+border:1px solid var(--line);
+color:var(--ink);
+box-shadow:0 10px 26px rgba(0,0,0,.12);
+cursor:pointer;
+}
+#cartFab .badge{
+background:var(--cta);
+color:#fff;
+border-radius:999px;
+padding:2px 8px;
+font-size:12px;
+font-weight:800;
+line-height:18px;
+min-width:22px;
+text-align:center;
+}
+#cartFab svg{
+width:18px;
+height:18px;
+display:block;
+opacity:.9;
+}
+#cartFab:focus{
+outline:none;
+box-shadow:0 0 0 3px rgba(37,211,102,.18), 0 10px 26px rgba(0,0,0,.12);
+}
+@media print{ #cartFab{display:none!important} }
 
-    .sheet-head{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 14px;
-      border-top:0;
-      border-bottom:1px solid var(--line);
-    }
-    .sheet-title{font-weight:900;font-size:18px;line-height:1.1}
-    .sheet-subtitle{margin-top:2px}
+/* ===== Bottom Sheet (פתיחה כמו אפליקציה) ===== */
+body.sheet-open{overflow:hidden}
 
-    .sheet-title-row{display:flex;align-items:center;gap:8px;min-width:0}
-    .sheet-badge{
-      display:none;
-      white-space:nowrap;
-      font-size:12px;
-      font-weight:800;
-      color:var(--muted);
-      background:rgba(0,0,0,.04);
-      border:1px solid var(--line);
-      padding:4px 8px;
-      border-radius:999px;
-    }
-    .sheet-badge.is-on{display:inline-flex}
+.sheet-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.42);
+opacity:0;
+pointer-events:none;
+transition:opacity .25s ease;
+z-index:9998;
+}
+.sheet-overlay.is-open{
+opacity:1;
+pointer-events:auto;
+}
 
-    .sheet-close{
-      width:40px;
-      height:40px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background:var(--card);
-      color:var(--ink);
-      font-size:22px;
-      line-height:38px;
-      padding:0;
-      cursor:pointer;
-    }
+.sheet{
+position:fixed;
+left:0;
+right:0;
+bottom:0;
+z-index:9999;
+background:var(--paper);
+border:1px solid var(--line);
+border-bottom:0;
+border-radius:18px 18px 0 0;
+transform:translateY(105%);
+transition:transform .32s cubic-bezier(.2,.9,.2,1);
+box-shadow:0 -18px 60px rgba(0,0,0,.25);
+max-height:86vh;
+display:flex;
+flex-direction:column;
+}
+.sheet.is-open{transform:translateY(0)}
 
-    .sheet-body{
-      padding:12px;
-      overflow:auto;
-      -webkit-overflow-scrolling:touch;
-    }
+.sheet-handle{
+width:56px;
+height:5px;
+border-radius:999px;
+background:rgba(17,24,39,.18);
+margin:10px auto 6px;
+}
 
-    /* תמונת קטגוריה בתוך ה-sheet (מצומצמת) */
-    .sheet-media{padding:0 12px 12px;}
-    .sheet-img{
-      width:100%;
-      height:140px;
-      object-fit:cover;
-      border-radius:14px;
-      display:block;
-      border:1px solid var(--line);
-      box-shadow:0 6px 18px rgba(0,0,0,.08);
-      transition:height .18s ease, transform .18s ease, opacity .18s ease;
-      will-change:height, transform, opacity;
-    }
+.sheet-head{
+display:flex;
+align-items:center;
+gap:10px;
+padding:10px 14px;
+border-top:0;
+border-bottom:1px solid var(--line);
+}
+.sheet-title{font-weight:900;font-size:18px;line-height:1.1}
+.sheet-subtitle{margin-top:2px}
 
-    /* כרטיס מוצר בתוך ה-sheet */
-    .item-card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:10px;
-      margin-bottom:10px;
-      box-shadow:0 2px 10px rgba(0,0,0,.06);
-    }
-    .item-top{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      justify-content:space-between;
-    }
-    .item-info{min-width:0}
-    .item-name{font-weight:900}
-    .item-meta{margin-top:4px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    .item-price{font-weight:900;color:var(--add)}
-    .item-unit{font-size:12px;color:var(--muted)}
+.sheet-title-row{display:flex;align-items:center;gap:8px;min-width:0}
+.sheet-badge{
+display:none;
+white-space:nowrap;
+font-size:12px;
+font-weight:800;
+color:var(--muted);
+background:rgba(0,0,0,.04);
+border:1px solid var(--line);
+padding:4px 8px;
+border-radius:999px;
+}
+.sheet-badge.is-on{display:inline-flex}
 
-    .stepper{
-      display:flex;
-      align-items:center;
-      gap:6px;
-      flex-shrink:0;
-      background:var(--paper);
-      border:1px solid var(--line);
-      border-radius:12px;
-      padding:6px;
-    }
-    .step-btn{
-      width:34px;
-      height:34px;
-      border-radius:10px;
-      border:1px solid var(--line);
-      background:var(--card);
-      color:var(--ink);
-      font-weight:900;
-      font-size:18px;
-      line-height:32px;
-      padding:0;
-      cursor:pointer;
-    }
-    .step-val{
-      min-width:74px;
-      text-align:center;
-      font-weight:900;
-      font-size:14px;
-      color:var(--ink);
-    }
+.sheet-close{
+width:40px;
+height:40px;
+border-radius:12px;
+border:1px solid var(--line);
+background:var(--card);
+color:var(--ink);
+font-size:22px;
+line-height:38px;
+padding:0;
+cursor:pointer;
+}
 
-    .item-controls{
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      align-items:stretch;
-      flex-shrink:0;
-      min-width:150px;
-    }
+.sheet-body{
+padding:12px;
+overflow:auto;
+-webkit-overflow-scrolling:touch;
+}
 
-    /* כפתור קטן מתחת ל +/−, כמו וולט */
-    .add-mini{
-      width:100%;
-      background:var(--add);
-      border-color:var(--add);
-      color:#fff;
-      font-weight:900;
-      border-radius:12px;
-      padding:8px 10px;
-      cursor:pointer;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      line-height:1;
-      transition:filter .15s ease, transform .06s ease;
-      height:40px;
-    }
-    .add-mini:hover{filter:brightness(.96)}
-    .add-mini:active{transform:translateY(1px)}
-    .add-mini:focus{outline:none;box-shadow:0 0 0 3px rgba(0,157,224,.18)}
-    .add-mini:disabled{opacity:.55;cursor:not-allowed;filter:none;transform:none}
+/* תמונת קטגוריה בתוך ה-sheet (מצומצמת) */
+.sheet-media{padding:0 12px 12px;}
+.sheet-img{
+width:100%;
+height:140px;
+object-fit:cover;
+border-radius:14px;
+display:block;
+border:1px solid var(--line);
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+transition:height .18s ease, transform .18s ease, opacity .18s ease;
+will-change:height, transform, opacity;
+}
 
-    .add-mini__price{font-weight:900;white-space:nowrap}
-    .add-mini__label{font-weight:900;white-space:nowrap}
-    /* =========================================== */
+/* כרטיס מוצר בתוך ה-sheet */
+.item-card{
+background:var(--card);
+border:1px solid var(--line);
+border-radius:14px;
+padding:10px;
+margin-bottom:10px;
+box-shadow:0 2px 10px rgba(0,0,0,.06);
+}
+.item-top{
+display:flex;
+gap:10px;
+align-items:center;
+justify-content:space-between;
+}
+.item-info{min-width:0}
+.item-name{font-weight:900}
+.item-meta{margin-top:4px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.item-price{font-weight:900;color:var(--add)}
+.item-unit{font-size:12px;color:var(--muted)}
 
-    /* היילייט לסל */
-    .cart.cart-flash{
-      animation: cartFlash 1200ms ease;
-    }
-    @keyframes cartFlash{
-      0%   { box-shadow:0 0 0 0 rgba(37,211,102,0), 0 0 0 rgba(0,0,0,0); }
-      25%  { box-shadow:0 0 0 4px rgba(37,211,102,.18), 0 14px 34px rgba(0,0,0,.12); }
-      100% { box-shadow:0 0 0 0 rgba(37,211,102,0), 0 3px 12px rgba(0,0,0,.06); }
-    }
-  </style>
+.stepper{
+display:flex;
+align-items:center;
+gap:6px;
+flex-shrink:0;
+background:var(--paper);
+border:1px solid var(--line);
+border-radius:12px;
+padding:6px;
+}
+.step-btn{
+width:34px;
+height:34px;
+border-radius:10px;
+border:1px solid var(--line);
+background:var(--card);
+color:var(--ink);
+font-weight:900;
+font-size:18px;
+line-height:32px;
+padding:0;
+cursor:pointer;
+}
+.step-val{
+min-width:74px;
+text-align:center;
+font-weight:900;
+font-size:14px;
+color:var(--ink);
+}
+
+.item-controls{
+display:flex;
+flex-direction:column;
+gap:8px;
+align-items:stretch;
+flex-shrink:0;
+min-width:150px;
+}
+
+/* כפתור קטן מתחת ל +/−, כמו וולט */
+.add-mini{
+width:100%;
+background:var(--add);
+border-color:var(--add);
+color:#fff;
+font-weight:900;
+border-radius:12px;
+padding:8px 10px;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+line-height:1;
+transition:filter .15s ease, transform .06s ease;
+height:40px;
+}
+.add-mini:hover{filter:brightness(.96)}
+.add-mini:active{transform:translateY(1px)}
+.add-mini:focus{outline:none;box-shadow:0 0 0 3px rgba(0,157,224,.18)}
+.add-mini:disabled{opacity:.55;cursor:not-allowed;filter:none;transform:none}
+
+.add-mini__price{font-weight:900;white-space:nowrap}
+.add-mini__label{font-weight:900;white-space:nowrap}
+/* =========================================== */
+
+/* היילייט לסל */
+.cart.cart-flash{
+animation: cartFlash 1200ms ease;
+}
+@keyframes cartFlash{
+0% { box-shadow:0 0 0 0 rgba(37,211,102,0), 0 0 0 rgba(0,0,0,0); }
+25% { box-shadow:0 0 0 4px rgba(37,211,102,.18), 0 14px 34px rgba(0,0,0,.12); }
+100% { box-shadow:0 0 0 0 rgba(37,211,102,0), 0 3px 12px rgba(0,0,0,.06); }
+}
+
+/* ===== FAQ עדין + פוטר ===== */
+.faq{
+margin-top:14px;
+background:var(--paper);
+border:1px solid var(--line);
+border-radius:14px;
+padding:12px;
+}
+.faq h3{margin:0 0 6px 0;font-size:15px}
+.faq .mini{margin:0 0 10px 0}
+.faq-item{
+background:var(--card);
+border:1px solid var(--line);
+border-radius:12px;
+padding:10px;
+margin-bottom:8px;
+}
+.faq-q{
+width:100%;
+text-align:right;
+background:transparent;
+border:0;
+padding:0;
+cursor:pointer;
+color:var(--ink);
+font-weight:900;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+}
+.faq-q .chev{opacity:.6;font-weight:900}
+.faq-a{margin-top:8px;color:var(--muted);font-size:13px;line-height:1.5;display:none}
+.faq-item.is-open .faq-a{display:block}
+
+.site-footer{
+margin-top:16px;
+padding-top:12px;
+border-top:1px solid var(--line);
+color:var(--muted);
+font-size:12.5px;
+line-height:1.6;
+}
+.footer-row{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+align-items:center;
+justify-content:space-between;
+}
+.footer-addr{
+color:inherit;
+text-decoration:none;
+display:inline-flex;
+align-items:center;
+gap:8px;
+min-width:min(520px,100%);
+}
+.footer-addr:hover{text-decoration:underline}
+.footer-addr strong{color:var(--ink);font-weight:800}
+.footer-hours{white-space:nowrap}
+.footer-social{display:flex;gap:8px;align-items:center;flex-shrink:0;}
+.icon-link{
+width:34px;
+height:34px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+border:1px solid var(--line);
+background:rgba(0,0,0,.02);
+border-radius:999px;
+color:inherit;
+text-decoration:none;
+}
+.icon-link:hover{filter:brightness(.98)}
+.icon-link svg{width:16px;height:16px;display:block;opacity:.88}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
-    <header style="display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap;margin-bottom:8px;">
-      <div style="display:flex;align-items:center;gap:10px;">
-        <img src="logo.webp" alt="אטליז חליסה עספור" style="height:48px;object-fit:contain;filter:drop-shadow(0 0 2px rgba(0,0,0,0.12));">
-        <div style="display:flex;flex-direction:column;line-height:1.1;">
-          <h1 style="margin:0;font-size:22px;">קטלוג הזמנות בוואטסאפ</h1>
-          <h2 style="margin:4px 0 0 0;font-size:14px;color:var(--muted);font-weight:700;">סניף עספור</h2>
-        </div>
-      </div>
-
-      <div class="tools">
-        <input id="q" type="search" placeholder="חיפוש מוצר…" />
-        <select id="sort">
-          <option value="name-asc">מיון: א–ת</option>
-          <option value="name-desc">מיון: ת–א</option>
-          <option value="price-asc">מחיר (נמוך → גבוה)</option>
-          <option value="price-desc">מחיר (גבוה → נמוך)</option>
-        </select>
-        <span id="count" class="mini">—</span>
-      </div>
-    </header>
-
-    <div class="two">
-      <div id="cols" class="cols"></div>
-
-      <aside class="cart">
-        <h3>סל קניות</h3>
-        <div class="mini">הוסיפו כמויות → העתקה או שליחת הסל ל־WhatsApp</div>
-        <div id="cartList" class="cart-list"></div>
-
-        <div class="note">
-          המחיר הסופי ייקבע אחרי שקילה בפועל. <br/>
-          המחירון מתעדכן לעיתים קרובות – יש לוודא את תוקפו בעת ההזמנה.
-        </div>
-
-        <div class="notes">
-          <label for="notesArea">הערות לקצב (למשל: חזה חתוך לקוביות / לשניצלים, נתח שלם, קצוץ וכו’)</label>
-          <textarea id="notesArea" rows="3" placeholder="כתבו כאן כל בקשה מיוחדת לחיתוך/אריזה…"></textarea>
-        </div>
-
-        <!-- סוג הזמנה (חובה) -->
-        <div class="fulfillment">
-          <div class="mini" style="width:100%;">סוג הזמנה (חובה)</div>
-          <div class="radios" id="fulfillmentWrap">
-            <label class="radio" data-radio="איסוף עצמי">
-              <input type="radio" name="fulfillment" value="איסוף עצמי" required>
-              <span>איסוף עצמי</span>
-            </label>
-            <label class="radio" data-radio="משלוח">
-              <input type="radio" name="fulfillment" value="משלוח" required>
-              <span>משלוח</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- כתובת למשלוח -->
-        <div class="notes" id="addressBlock" style="display:none;">
-          <label for="addressArea">כתובת למשלוח (חובה)</label>
-          <textarea id="addressArea" rows="2" placeholder="רחוב, מספר, עיר, קומה/דירה אם צריך…"></textarea>
-        </div>
-
-        <div class="actions">
-          <button id="copyBtn">העתקת סל</button>
-          <button id="waBtn" class="cta">שליחה ל־WhatsApp</button>
-          <button id="clearBtn">נקה סל</button>
-        </div>
-      </aside>
-    </div>
-  </div>
-
-  <!-- כפתור סל צף (חייב להיות לפני הסקריפט כדי שה-binding לא יקבל null) -->
-  <button id="cartFab" type="button" aria-label="מעבר לסל">
-    <span class="badge" id="cartFabBadge">0</span>
-    <span style="font-weight:800;">סל</span>
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path fill="currentColor" d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2Zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2ZM7.16 14h9.92c.75 0 1.4-.41 1.74-1.03L21 7H6.21L5.27 5H2v2h2l3.6 7.59-1.35 2.44C5.52 18.37 6.48 20 8 20h12v-2H8l1.16-2Z"/>
-    </svg>
-  </button>
-
-  <!-- Bottom Sheet (קטגוריה נפתחת מלמטה למעלה) -->
-  <div id="sheetOverlay" class="sheet-overlay" hidden></div>
-  <div id="sheet" class="sheet" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="sheet-handle" aria-hidden="true"></div>
-    <div class="sheet-head">
-      <button id="sheetClose" class="sheet-close" type="button" aria-label="סגור">×</button>
-      <div style="min-width:0;">
-        <div class="sheet-title-row">
-          <div id="sheetTitle" class="sheet-title"></div>
-          <span id="sheetBadge" class="sheet-badge"></span>
-        </div>
-        <div id="sheetSubtitle" class="sheet-subtitle mini"></div>
-      </div>
-    </div>
-    <div id="sheetMedia" class="sheet-media" hidden>
-      <img id="sheetImg" class="sheet-img" alt="" />
-    </div>
-    <div id="sheetBody" class="sheet-body"></div>
-  </div>
-
-  <script>
-    // וואטסאפ – עספור
-    const WA_BASE = "https://wa.me/972549392888?text=";
-
-    // נתונים (בלי הערות HTML בתוך ה-JS)
-    const DATA = [
-      {name:"עוף שלם", price:25, category:"עופות"},
-      {name:"כבד עוף", price:30, category:"עופות"},
-      {name:"לבבות", price:35, category:"עופות"},
-      {name:"כרעיים", price:28, category:"עופות"},
-      {name:"חזה עוף", price:40, category:"עופות"},
-      {name:"שניצל", price:45, category:"עופות"},
-      {name:"פילה עוף", price:48, category:"עופות"},
-      {name:"פרגית בלי עור", price:50, category:"עופות"},
-      {name:"פרגית עם עור", price:40, category:"עופות"},
-      {name:"שוקיים", price:30, category:"עופות"},
-      {name:"כנפיים", price:20, category:"עופות"},
-      {name:"חזה הודו", price:45, category:"עופות"},
-      {name:"כרעיים 4 קילו", price:100, category:"עופות", qtyMode:"none"},
-
-      {name:"בשר טחון", price:66, category:"עגל"},
-      {name:"זנב עגל", price:54, category:"עגל"},
-      {name:"לשון עגל", price:75, category:"עגל"},
-      {name:"שקדי עגל", price:150, category:"עגל"},
-      {name:"נתח קצבים", price:149, category:"עגל"},
-      {name:"בשר ראש", price:79, category:"עגל"},
-      {name:"רגל עגל", price:50, category:"עגל"},
-      {name:"כבד עגל", price:30, category:"עגל"},
-      {name:"מוח עגל ליחידה", price:35, category:"עגל", qtyMode:"unit"},
-      {name:"כתף מס' 5", price:95, category:"עגל"},
-      {name:"אוסובוקו עגל", price:75, category:"עגל"},
-      {name:"שייטל", price:109, category:"עגל"},
-      {name:"בשר עגלה", price:80, category:"עגל"},
-
-      {name:"צלעות טיבון", price:180, category:"סטייקים"},
-      {name:"צלעות בייבי", price:249, category:"סטייקים"},
-      {name:"דפי אסאדו", price:100, category:"סטייקים"},
-      {name:"דפי אנטריקוט", price:159, category:"סטייקים"},
-      {name:"רצועות ואסיו", price:139, category:"סטייקים"},
-      {name:"פילה שייטל", price:130, category:"סטייקים"},
-      {name:"אנטריקוט עגל", price:160, category:"סטייקים"},
-      {name:"פילה עגל", price:200, category:"סטייקים"},
-      {name:"סינטה", price:150, category:"סטייקים"},
-      {name:"פיקנייה", price:129, category:"סטייקים"},
-      {name:"אנטריקוט בלאק אנגוס", price:230, category:"סטייקים"},
-      {name:"טיבון בלאק אנגוס", price:180, category:"סטייקים"},
-      {name:"טומהוק", price:180, category:"סטייקים"},
-
-      {name:"כבש בלי עצם", price:180, category:"כבש"},
-      {name:"כבש עם עצם", price:129, category:"כבש"},
-      {name:"לייה בלדי", price:120, category:"כבש"},
-      {name:"שוק כבש", price:129, category:"כבש"},
-      {name:"כבד כבש", price:50, category:"כבש"},
-      {name:"שיפודי כבש", price:180, category:"כבש"},
-      {name:"אוסובוקו כבש", price:130, category:"כבש"},
-      {name:"צוור כבש", price:129, category:"כבש"},
-      {name:"כתף כבש", price:129, category:"כבש"},
-
-      {name:"עראיס", price:69, category:"מיוחדים"},
-      {name:"המבורגר", price:75, category:"מיוחדים"},
-      {name:"קבב", price:75, category:"מיוחדים"},
-      {name:"סרסיסו", price:75, category:"מיוחדים"},
-      {name:"לוליפופ", price:180, category:"מיוחדים"},
-      {name:"מרגז חריף", price:75, category:"מיוחדים"},
-      {name:"כנפיים מתובל", price:25, category:"מיוחדים"},
-      {name:"עוף ממולה", price:49, category:"מיוחדים"},
-      {name:"כבש ממולאים", price:139, category:"מיוחדים"},
-      {name:"עגל ממולה", price:139, category:"מיוחדים"},
-      {name:"שיפודי פרגית", price:69, category:"מיוחדים"},
-      {name:"שיפודי לבבות", price:69, category:"מיוחדים"},
-
-      {name:"עגל (שווארמה)", price:85, category:"שווארמה"},
-      {name:"הודו נקבה", price:70, category:"שווארמה"},
-      {name:"עוף (שווארמה)", price:45, category:"שווארמה"},
-      {name:"שווארמה פרגית", price:50, category:"שווארמה"},
-      {name:"כבש (שווארמה)", price:180, category:"שווארמה"}
-    ];
-
-    // תמונות קטגוריות (אותם שמות קבצים כמו אצלך)
-    const ICONS = {
-      "עופות": "Chicken.png",
-      "עגל": "Veal.png",
-      "סטייקים": "Steaks.png",
-      "כבש": "Lamb.png",
-      "מיוחדים": "Specials.png",
-      "שווארמה": "Shawarma.png"
-    };
-
-    const desiredOrder = ["עופות","עגל","סטייקים","כבש","מיוחדים","שווארמה"];
-
-    const cols = document.getElementById('cols');
-    const q = document.getElementById('q');
-    const sortSel = document.getElementById('sort');
-    const countEl = document.getElementById('count');
-
-    const cartList = document.getElementById('cartList');
-    const copyBtn = document.getElementById('copyBtn');
-    const waBtn = document.getElementById('waBtn');
-    const clearBtn = document.getElementById('clearBtn');
-
-    const notesArea = document.getElementById('notesArea');
-    const addressBlock = document.getElementById('addressBlock');
-    const addressArea = document.getElementById('addressArea');
-
-    // Bottom Sheet elements
-    const sheetOverlay = document.getElementById('sheetOverlay');
-    const sheet = document.getElementById('sheet');
-    const sheetClose = document.getElementById('sheetClose');
-    const sheetTitle = document.getElementById('sheetTitle');
-    const sheetSubtitle = document.getElementById('sheetSubtitle');
-    const sheetBadge = document.getElementById('sheetBadge');
-    const sheetMedia = document.getElementById('sheetMedia');
-    const sheetImg = document.getElementById('sheetImg');
-    const sheetBody = document.getElementById('sheetBody');
-
-    let CURRENT_BY = new Map();
-    let CURRENT_CMP = (a,b)=>0;
-
-    // תמונת קטגוריה – דינמית בזמן גלילה בתוך ה-sheet (עדין)
-    let sheetScrollRaf = 0;
-    function resetSheetImage(){
-      if(!sheetImg) return;
-      sheetImg.style.height = '140px';
-      sheetImg.style.opacity = '1';
-      sheetImg.style.transform = 'none';
-    }
-    function onSheetScroll(){
-      if(!sheetBody || !sheetImg || sheetMedia?.hidden) return;
-      if(sheetScrollRaf) return;
-      sheetScrollRaf = requestAnimationFrame(()=>{
-        const y = sheetBody.scrollTop || 0;
-        const t = Math.min(1, y / 220); // כמה “עמוק” גללו
-        const h = 140 - (36 * t);        // 140px → ~104px
-        const op = 1 - (0.12 * t);       // פייד עדין
-        const ty = -8 * t;               // פרלקס קטן
-        const sc = 1 - (0.03 * t);       // סקייל עדין
-
-        sheetImg.style.height = `${Math.round(h)}px`;
-        sheetImg.style.opacity = String(op);
-        sheetImg.style.transform = `translateY(${ty}px) scale(${sc})`;
-
-        sheetScrollRaf = 0;
-      });
-    }
-    function bindSheetScroll(){
-      if(!sheetBody) return;
-      sheetBody.removeEventListener('scroll', onSheetScroll);
-      sheetBody.addEventListener('scroll', onSheetScroll, {passive:true});
-      onSheetScroll();
-    }
-    function unbindSheetScroll(){
-      if(!sheetBody) return;
-      sheetBody.removeEventListener('scroll', onSheetScroll);
-      if(sheetScrollRaf){ cancelAnimationFrame(sheetScrollRaf); sheetScrollRaf = 0; }
-      resetSheetImage();
-    }
-
-    const fulfillmentLabels = Array.from(document.querySelectorAll('#fulfillmentWrap .radio'));
-    const fulfillmentInputs = Array.from(document.querySelectorAll('input[name="fulfillment"]'));
-
-    const LS_KEY = 'halisa_asfour_cart_v1';
-
-    const cart = new Map();
-    const keyOf = i => `${i.name}|${i.category}`;
-
-    const isUnitItem = item => item.qtyMode === 'unit';
-    const unitLabelOf = item => isUnitItem(item) ? 'יח׳' : 'ק"ג';
-
-    const roundToStep = (n, step) => Math.round((Number(n)||0) / step) * step;
-
-    const normalizeQty = (item, qty) => {
-      if(isUnitItem(item)) return Math.max(0, Math.round(Number(qty)||0));
-      return Math.max(0, roundToStep(qty, 0.5));
-    };
-
-    const fmtQty = (item, qty) => {
-      const n = Number(qty)||0;
-      const txt = isUnitItem(item) ? n.toFixed(0) : n.toFixed(1).replace(/\.0$/,'');
-      return `${txt} ${unitLabelOf(item)}`;
-    };
-
-    const money = n => `₪ ${Number(n||0).toLocaleString('he-IL',{maximumFractionDigits:2})}`;
-
-    function saveState(){
-      try{
-        const payload = {
-          cart: Array.from(cart.values()).map(it=>({
-            name: it.name,
-            category: it.category,
-            price: it.price,
-            qty: it.qty,
-            qtyMode: it.qtyMode || null
-          })),
-          notes: notesArea?.value || "",
-          fulfillment: document.querySelector('input[name="fulfillment"]:checked')?.value || "",
-          address: addressArea?.value || ""
-        };
-        localStorage.setItem(LS_KEY, JSON.stringify(payload));
-      } catch(e){}
-    }
-
-    function loadState(){
-      try{
-        const raw = localStorage.getItem(LS_KEY);
-        if(!raw) return;
-
-        const payload = JSON.parse(raw);
-        if(payload?.cart?.length){
-          payload.cart.forEach(it=>{
-            const k = `${it.name}|${it.category}`;
-            cart.set(k, it);
-          });
-        }
-
-        if(typeof payload.notes === 'string' && notesArea) notesArea.value = payload.notes;
-
-        if(payload.fulfillment){
-          const inp = document.querySelector(`input[name="fulfillment"][value="${payload.fulfillment}"]`);
-          if(inp) inp.checked = true;
-        } else {
-          const def = document.querySelector(`input[name="fulfillment"][value="איסוף עצמי"]`);
-          if(def) def.checked = true;
-        }
-
-        if(typeof payload.address === 'string' && addressArea) addressArea.value = payload.address;
-
-        syncFulfillmentUI();
-        renderCart();
-      } catch(e){}
-    }
-
-    function syncFulfillmentUI(){
-      const val = document.querySelector('input[name="fulfillment"]:checked')?.value || "";
-      fulfillmentLabels.forEach(lbl=>{
-        lbl.classList.toggle('is-active', lbl.dataset.radio === val);
-      });
-
-      if(addressBlock) addressBlock.style.display = (val === 'משלוח') ? 'flex' : 'none';
-      saveState();
-    }
-
-    function addToCart(item, qty){
-      const k = keyOf(item);
-      const addQty = normalizeQty(item, qty);
-      if(addQty <= 0) return;
-
-      if(!cart.has(k)) cart.set(k, {...item, qty:0});
-      const current = Number(cart.get(k).qty)||0;
-      const next = normalizeQty(item, current + addQty);
-
-      if(next <= 0) cart.delete(k);
-      else cart.get(k).qty = next;
-
-      renderCart();
-      saveState();
-    }
-
-    function removeItem(item){
-      cart.delete(keyOf(item));
-      renderCart();
-      saveState();
-    }
-
-    function clearCart(){
-      cart.clear();
-      renderCart();
-      saveState();
-    }
-
-    // ===== סל צף + גלילה + היילייט =====
-    const cartFab = document.getElementById('cartFab');
-    const cartFabBadge = document.getElementById('cartFabBadge');
-    const cartBox = document.querySelector('aside.cart');
-
-    function updateCartFab(){
-      if(!cartFab || !cartFabBadge) return;
-      const itemsCount = cart.size; // כמה פריטים שונים בסל
-      cartFab.style.display = itemsCount > 0 ? 'flex' : 'none';
-      cartFabBadge.textContent = String(itemsCount);
-    }
-
-    function flashCart(){
-      if(!cartBox) return;
-      cartBox.classList.remove('cart-flash');
-      void cartBox.offsetWidth; // reflow כדי לאפשר אנימציה מחדש
-      cartBox.classList.add('cart-flash');
-    }
-
-    if(cartFab){
-      cartFab.addEventListener('click', ()=>{
-        if(!cartBox) return;
-        cartBox.scrollIntoView({ behavior:'smooth', block:'start' });
-        setTimeout(flashCart, 450);
-
-        if(typeof gtag === 'function'){
-          gtag('event', 'click_cart_fab', { event_category:'navigation', event_label:'Floating Cart Button' });
-        }
-      });
-    }
-
-    function renderCart(){
-      if(!cartList) return;
-      cartList.innerHTML = '';
-      Array.from(cart.values()).forEach(it=>{
-        const line = document.createElement('div');
-        line.className='line';
-
-        const left = document.createElement('div');
-        left.innerHTML =
-          `<div><strong>${it.name}</strong> <span class="mini">(${it.category})</span></div>
-           <div class="mini">${money(it.price)} × ${fmtQty(it, it.qty)}</div>`;
-
-        const priceEl = document.createElement('div');
-        priceEl.className='mini';
-        priceEl.textContent = money(it.price * (Number(it.qty)||0));
-
-        const del = document.createElement('button');
-        del.className='del';
-        del.textContent='מחק';
-        del.addEventListener('click', ()=> removeItem(it));
-
-        line.append(left, priceEl, del);
-        cartList.append(line);
-      });
-
-      updateCartFab();
-    }
-
-    function validateFulfillment(){
-      const fulfillment = document.querySelector('input[name="fulfillment"]:checked')?.value || "";
-      if(!fulfillment){
-        alert("בחרו סוג הזמנה: איסוף עצמי או משלוח");
-        return false;
-      }
-      if(fulfillment === 'משלוח'){
-        const addr = (addressArea?.value||"").trim();
-        if(!addr){
-          alert("במשלוח חובה למלא כתובת למשלוח");
-          addressArea?.focus();
-          return false;
-        }
-      }
-      return true;
-    }
-
-    function buildText(){
-      const lines = [];
-      lines.push("הזמנה לאטליז חליסה עספור:");
-
-      const fulfillment = document.querySelector('input[name="fulfillment"]:checked')?.value || "";
-      lines.push(`סוג הזמנה: ${fulfillment || "—"}`);
-
-      if(fulfillment === 'משלוח'){
-        const addr = (addressArea?.value||"").trim();
-        if(addr) lines.push(`כתובת למשלוח: ${addr}`);
-      }
-
-      Array.from(cart.values()).forEach(it=>{
-        lines.push(`• ${it.category} | ${it.name} × ${fmtQty(it, it.qty)} — ${money(it.price * (Number(it.qty)||0))}`);
-      });
-
-      const notes = (notesArea?.value||"").trim();
-      if(notes){
-        lines.push("");
-        lines.push("הערות לקצב:");
-        lines.push(notes);
-      }
-
-      lines.push("");
-      lines.push("הערה: המחיר הסופי ייקבע אחרי שקילה בפועל. המחירון מתעדכן; יש לוודא תוקף בעת ההזמנה.");
-      return lines.join("\n");
-    }
-
-    function fallbackCopy(text){
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      ta.setAttribute('readonly','');
-      ta.style.position = 'fixed';
-      ta.style.top = '-9999px';
-      ta.style.opacity = '0';
-      document.body.appendChild(ta);
-      ta.select();
-      try{ document.execCommand('copy'); }
-      finally { document.body.removeChild(ta); }
-    }
-
-    async function copyToClipboard(text){
-      if(navigator.clipboard && window.isSecureContext){
-        await navigator.clipboard.writeText(text);
-        return;
-      }
-      fallbackCopy(text);
-    }
-
-    if(copyBtn){
-      copyBtn.addEventListener('click', async ()=>{
-        if(!validateFulfillment()) return;
-
-        const text = buildText();
-        try{
-          await copyToClipboard(text);
-          copyBtn.textContent="הועתק ✓";
-          setTimeout(()=>copyBtn.textContent="העתקת סל",900);
-        } catch(e){
-          copyBtn.textContent="לא הועתק";
-          setTimeout(()=>copyBtn.textContent="העתקת סל",1200);
-        }
-
-        if(typeof gtag === 'function'){
-          gtag('event', 'copy_cart', { event_category:'engagement', event_label:'Cart Copied' });
-        }
-      });
-    }
-
-    if(waBtn){
-      waBtn.addEventListener('click', ()=>{
-        if(!validateFulfillment()) return;
-
-        if(typeof gtag === 'function'){
-          gtag('event', 'click_wa_button', { event_category:'engagement', event_label:'WhatsApp Send Button' });
-        }
-        window.open(WA_BASE + encodeURIComponent(buildText()), "_blank");
-      });
-    }
-
-    if(clearBtn){
-      clearBtn.addEventListener('click', ()=>{
-        clearCart();
-        if(typeof gtag === 'function'){
-          gtag('event', 'clear_cart', { event_category:'engagement', event_label:'Cart Cleared' });
-        }
-      });
-    }
-
-    notesArea?.addEventListener('input', saveState);
-    addressArea?.addEventListener('input', saveState);
-
-    fulfillmentInputs.forEach(inp=>{
-      inp.addEventListener('change', ()=>{
-        syncFulfillmentUI();
-        if(typeof gtag === 'function'){
-          gtag('event', 'select_fulfillment', { event_category:'interaction', event_label: inp.value });
-        }
-      });
-    });
-
-    function groupByCategory(rows){
-      const m = new Map();
-      rows.forEach(x=>{
-        const c = x.category || "אחר";
-        if(!m.has(c)) m.set(c, []);
-        m.get(c).push(x);
-      });
-      return m;
-    }
-
-    function apply(){
-      const term = (q?.value||"").trim().toLowerCase();
-      const s = sortSel?.value;
-
-      let rows = DATA.filter(x=>{
-        if(!term) return true;
-        const hay = [x.name||"", x.desc||"", x.category||""].join(" ").toLowerCase();
-        return hay.includes(term);
-      });
-
-      const cmp = (a,b)=>{
-        if (s==='name-asc')  return (a.name||'').localeCompare(b.name||'','he');
-        if (s==='name-desc') return (b.name||'').localeCompare(a.name||'','he');
-        if (s==='price-asc') return (a.price??Infinity) - (b.price??Infinity);
-        if (s==='price-desc')return (b.price??-Infinity) - (a.price??-Infinity);
-        return 0;
-      };
-
-      render(rows, cmp);
-    }
-
-    function openSheet(cat, items){
-      if(!sheet || !sheetOverlay || !sheetBody) return;
-
-      const list = (items || []).slice();
-      sheetTitle.textContent = cat;
-      sheetSubtitle.textContent = `${list.length.toLocaleString('he-IL')} פריטים`;
-      sheetBody.innerHTML = '';
-      // תמיד מתחילים מהטופ
-      try{ sheetBody.scrollTop = 0; } catch(e){}
-      resetSheetImage();
-      unbindSheetScroll();
-
-      // תמונת קטגוריה בתוך ה-sheet
-      const iconName = ICONS[cat] || null;
-      if(sheetMedia && sheetImg && iconName){
-        sheetImg.src = iconName;
-        sheetImg.alt = cat;
-        sheetMedia.hidden = false;
-        bindSheetScroll();
-      } else if(sheetMedia){
-        sheetMedia.hidden = true;
-        unbindSheetScroll();
-      }
-      // הערה כללית לקטגוריית עופות – ליד הכותרת
-      if(sheetBadge){
-        if(cat === 'עופות'){
-          sheetBadge.textContent = 'המשקל כולל עצמות';
-          sheetBadge.classList.add('is-on');
-        } else {
-          sheetBadge.textContent = '';
-          sheetBadge.classList.remove('is-on');
-        }
-      }
-
-      list.forEach(item=>{
-        const card = document.createElement('div');
-        card.className = 'item-card';
-
-        const top = document.createElement('div');
-        top.className = 'item-top';
-
-        const info = document.createElement('div');
-        info.className = 'item-info';
-
-        const name = document.createElement('div');
-        name.className = 'item-name';
-        name.textContent = item.name;
-
-        const meta = document.createElement('div');
-        meta.className = 'item-meta';
-
-        const price = document.createElement('div');
-        price.className = 'item-price';
-        price.textContent = money(item.price);
-
-        meta.appendChild(price);
-
-        if(item.qtyMode === 'unit'){
-          const unit = document.createElement('span');
-          unit.className = 'item-unit';
-          unit.textContent = 'ליחידה';
-          meta.appendChild(unit);
-        }
-
-        info.append(name, meta);
-
-        // שליטה בכמות + כפתור הוספה (כמו באפליקציה)
-        const isUnit = item.qtyMode === 'unit';
-        const isNone = item.qtyMode === 'none';
-        const step = isUnit ? 1 : 0.5;
-        const unitLbl = isUnit ? 'יח׳' : 'ק"ג';
-
-        let current = isNone ? 1 : step;
-
-        const controls = document.createElement('div');
-        controls.className = 'item-controls';
-
-        const stepper = document.createElement('div');
-        stepper.className = 'stepper';
-
-        const minus = document.createElement('button');
-        minus.type = 'button';
-        minus.className = 'step-btn';
-        minus.textContent = '–';
-
-        const val = document.createElement('div');
-        val.className = 'step-val';
-
-        const plus = document.createElement('button');
-        plus.type = 'button';
-        plus.className = 'step-btn';
-        plus.textContent = '+';
-
-        const renderVal = ()=>{
-          const txt = isUnit ? current.toFixed(0) : current.toFixed(1).replace(/\.0$/,'');
-          val.textContent = `${txt} ${unitLbl}`;
-        };
-
-        const add = document.createElement('button');
-        add.type = 'button';
-        add.className = 'add-mini';
-
-        const updateAdd = ()=>{
-          const normalized = isNone ? 1 : normalizeQty(item, current);
-          const total = (Number(item.price)||0) * (Number(normalized)||0);
-          add.innerHTML = `<span class="add-mini__price">${money(total)}</span><span class="add-mini__label">הוספה להזמנה</span>`;
-          add.disabled = (!isNone && normalized <= 0);
-        };
-
-        if(!isNone){
-          renderVal();
-          stepper.append(minus, val, plus);
-
-          minus.addEventListener('click', ()=>{
-            current = Math.max(0, roundToStep(current - step, step));
-            renderVal();
-            updateAdd();
-          });
-          plus.addEventListener('click', ()=>{
-            current = roundToStep(current + step, step);
-            renderVal();
-            updateAdd();
-          });
-
-          controls.appendChild(stepper);
-        }
-
-        updateAdd();
-
-        add.addEventListener('click', ()=>{
-          if(isNone){
-            addToCart(item, 1);
-            updateAdd();
-            return;
-          }
-          const normalized = normalizeQty(item, current);
-          if(normalized > 0) addToCart(item, normalized);
-          current = step; // חוזר לברירת מחדל כמו באפליקציה
-          renderVal();
-          updateAdd();
-        });
-
-        controls.appendChild(add);
-
-        top.appendChild(info);
-        top.appendChild(controls);
-
-        card.append(top);
-        sheetBody.appendChild(card);
-      });
-
-      document.body.classList.add('sheet-open');
-      sheetOverlay.hidden = false;
-      sheetOverlay.classList.add('is-open');
-      sheet.classList.add('is-open');
-      sheet.setAttribute('aria-hidden','false');
-
-      if(typeof gtag === 'function'){
-        gtag('event', 'open_category_sheet', { event_category:'navigation', event_label: cat });
-      }
-    }
-
-    function closeSheet(){
-      if(!sheet || !sheetOverlay) return;
-      unbindSheetScroll();
-      sheet.classList.remove('is-open');
-      sheetOverlay.classList.remove('is-open');
-      sheet.setAttribute('aria-hidden','true');
-      document.body.classList.remove('sheet-open');
-      setTimeout(()=>{ sheetOverlay.hidden = true; }, 260);
-    }
-
-    function openCategory(cat){
-      const items = (CURRENT_BY.get(cat) || []).slice().sort(CURRENT_CMP);
-      openSheet(cat, items);
-    }
-
-    if(sheetClose) sheetClose.addEventListener('click', closeSheet);
-    if(sheetOverlay) sheetOverlay.addEventListener('click', closeSheet);
-    window.addEventListener('keydown', (e)=>{
-      if(e.key === 'Escape' && sheet?.classList.contains('is-open')) closeSheet();
-    });
-
-    function toggleSection(section, h2, cat){
-      // במקום אקורדיון – פותחים Bottom Sheet
-      openCategory(cat);
-      h2.setAttribute('aria-expanded', 'false');
-    }
-
-    function render(rows, cmp){
-      CURRENT_CMP = cmp;
-      if(countEl) countEl.textContent = `${rows.length.toLocaleString('he-IL')} פריטים`;
-      const by = groupByCategory(rows);
-      CURRENT_BY = by;
-      const rest = Array.from(by.keys())
-        .filter(c=>!desiredOrder.includes(c))
-        .sort((a,b)=>a.localeCompare(b,'he'));
-      const order = [...desiredOrder.filter(c=>by.has(c)), ...rest];
-
-      if(cols) cols.innerHTML = '';
-
-      order.forEach(cat=>{
-        const section = document.createElement('section');
-        section.className = 'cat collapsed';
-
-        const h2 = document.createElement('h2');
-        h2.setAttribute('role','button');
-        h2.setAttribute('tabindex','0');
-        h2.setAttribute('aria-expanded','false');
-
-        const iconName = ICONS[cat] || null;
-        if(iconName){
-          h2.innerHTML = `
-            <img class="cat-img" loading="lazy" src="${iconName}" alt="${cat}" />
-            <span>${cat}</span>
-          `;
-        } else {
-          h2.textContent = cat;
-        }
-
-        section.appendChild(h2);
-
-        const list = document.createElement('div');
-        list.className='list';
-
-        // הערה כללית לקטגוריית עופות
-        if(cat === 'עופות'){
-          const note = document.createElement('div');
-          note.className = 'cat-note';
-          note.textContent = 'הערה: המשקל כולל עצמות.';
-          list.appendChild(note);
-        }
-
-        by.get(cat).slice().sort(cmp).forEach(item=>{
-          const card = document.createElement('div');
-          card.className='card';
-
-          const top = document.createElement('div');
-          top.className='row';
-
-          const name = document.createElement('div');
-          name.className='name';
-          name.textContent = item.name;
-
-          const right = document.createElement('div');
-          right.style.display='flex';
-          right.style.alignItems='center';
-
-          const price = document.createElement('div');
-          price.className='price';
-          price.textContent = money(item.price);
-          right.appendChild(price);
-
-          if(item.qtyMode === 'unit'){
-            const unit = document.createElement('span');
-            unit.className='unit';
-            unit.textContent = 'ליחידה';
-            right.appendChild(unit);
-          }
-
-          top.append(name, right);
-
-          const qty = document.createElement('div');
-          qty.className='qty';
-
-          if(item.qtyMode === 'none'){
-            const add = document.createElement('button');
-            add.textContent='הוסף';
-            add.className='add btn';
-            add.addEventListener('click', ()=> addToCart(item, 1));
-            qty.appendChild(add);
-          } else {
-            const isUnit = item.qtyMode === 'unit';
-            const step = isUnit ? 1 : 0.5;
-            const unitLbl = isUnit ? 'יח׳' : 'ק"ג';
-
-            const minus = document.createElement('button');
-            minus.className='btn';
-            minus.textContent='–';
-
-            const val = document.createElement('div');
-            val.className='btn val';
-
-            const plus = document.createElement('button');
-            plus.className='btn';
-            plus.textContent='+';
-
-            const add = document.createElement('button');
-            add.textContent='הוסף';
-            add.className='add btn';
-
-            let current = 0;
-
-            const renderVal = ()=>{
-              const txt = isUnit ? current.toFixed(0) : current.toFixed(1).replace(/\.0$/,'');
-              val.textContent = `${txt} ${unitLbl}`;
-            };
-            renderVal();
-
-            minus.addEventListener('click', ()=>{
-              current = Math.max(0, roundToStep(current - step, step));
-              renderVal();
-            });
-
-            plus.addEventListener('click', ()=>{
-              current = roundToStep(current + step, step);
-              renderVal();
-            });
-
-            add.addEventListener('click', ()=>{
-              const normalized = normalizeQty(item, current);
-              if(normalized > 0) addToCart(item, normalized);
-              current = 0;
-              renderVal();
-            });
-
-            qty.append(minus, val, plus, add);
-          }
-
-          card.append(top, qty);
-          list.appendChild(card);
-        });
-
-        section.appendChild(list);
-        cols?.appendChild(section);
-
-        h2.addEventListener('click', ()=> toggleSection(section, h2, cat));
-        h2.addEventListener('keydown', (e)=>{
-          if(e.key === 'Enter' || e.key === ' '){
-            e.preventDefault();
-            toggleSection(section, h2, cat);
-          }
-        });
-      });
-    }
-
-    
-    // init
-    loadState();
-    if(!document.querySelector('input[name="fulfillment"]:checked')){
-      const def = document.querySelector(`input[name="fulfillment"][value="איסוף עצמי"]`);
-      if(def) def.checked = true;
-      syncFulfillmentUI();
-    } else {
-      syncFulfillmentUI();
-    }
-
-    apply();
-    renderCart();
-
-    q?.addEventListener('input', ()=>{
-      apply();
-      if(typeof gtag === 'function' && q.value.trim()){
-        gtag('event', 'search', { event_category:'interaction', event_label: q.value.trim() });
-      }
-    });
-
-    sortSel?.addEventListener('change', apply);
-
-    // ===== Smoke tests (בדיקות בסיסיות שלא משנות התנהגות) =====
-    (function runSmokeTests(){
-      const required = ['cols','q','sort','count','cartList','copyBtn','waBtn','clearBtn','notesArea','addressArea','fulfillmentWrap','cartFab','cartFabBadge'];
-      const missing = required.filter(id=>!document.getElementById(id));
-      console.assert(missing.length === 0, 'Missing DOM elements:', missing);
-      console.assert(typeof addToCart === 'function' && typeof renderCart === 'function', 'Core functions missing');
-    })();
-  </script>
+<div class="wrap">
+<header style="display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap;margin-bottom:8px;">
+<div style="display:flex;align-items:center;gap:10px;">
+<img src="logo.webp" alt="אטליז חליסה עספור" style="height:48px;object-fit:contain;filter:drop-shadow(0 0 2px rgba(0,0,0,0.12));">
+<div style="display:flex;flex-direction:column;line-height:1.1;">
+<h1 style="margin:0;font-size:22px;">קטלוג הזמנות בוואטסאפ</h1>
+<h2 style="margin:4px 0 0 0;font-size:14px;color:var(--muted);font-weight:700;">סניף עספור</h2>
+</div>
+</div>
+
+<div class="tools">
+<input id="q" type="search" placeholder="חיפוש מוצר…" />
+<select id="sort">
+<option value="name-asc">מיון: א–ת</option>
+<option value="name-desc">מיון: ת–א</option>
+<option value="price-asc">מחיר (נמוך → גבוה)</option>
+<option value="price-desc">מחיר (גבוה → נמוך)</option>
+</select>
+<span id="count" class="mini">—</span>
+</div>
+</header>
+
+<div class="two">
+<div id="cols" class="cols"></div>
+
+<aside class="cart">
+<h3>סל קניות</h3>
+<div class="mini">הוסיפו כמויות → העתקה או שליחת הסל ל־WhatsApp</div>
+<div id="cartList" class="cart-list"></div>
+
+<div class="note">
+המחיר הסופי ייקבע אחרי שקילה בפועל. <br/>
+המחירון מתעדכן לעיתים קרובות – יש לוודא את תוקפו בעת ההזמנה.
+</div>
+
+<div class="notes">
+<label for="notesArea">הערות לקצב (למשל: חזה חתוך לקוביות / לשניצלים, נתח שלם, קצוץ וכו’)</label>
+<textarea id="notesArea" rows="3" placeholder="כתבו כאן כל בקשה מיוחדת לחיתוך/אריזה…"></textarea>
+</div>
+
+<!-- סוג הזמנה (חובה) -->
+<div class="fulfillment">
+<div class="mini" style="width:100%;">סוג הזמנה (חובה)</div>
+<div class="radios" id="fulfillmentWrap">
+<label class="radio" data-radio="איסוף עצמי">
+<input type="radio" name="fulfillment" value="איסוף עצמי" required>
+<span>איסוף עצמי</span>
+</label>
+<label class="radio" data-radio="משלוח">
+<input type="radio" name="fulfillment" value="משלוח" required>
+<span>משלוח</span>
+</label>
+</div>
+</div>
+
+<!-- כתובת למשלוח -->
+<div class="notes" id="addressBlock" style="display:none;">
+<label for="addressArea">כתובת למשלוח (חובה)</label>
+<textarea id="addressArea" rows="2" placeholder="רחוב, מספר, עיר, קומה/דירה אם צריך…"></textarea>
+</div>
+
+<div class="actions">
+<button id="copyBtn">העתקת סל</button>
+<button id="waBtn" class="cta">שליחה ל־WhatsApp</button>
+<button id="clearBtn">נקה סל</button>
+</div>
+</aside>
+</div>
+
+<!-- שאלות נפוצות (קצר וישר) -->
+<section class="faq" aria-label="שאלות נפוצות">
+<h3>שאלות נפוצות</h3>
+<p class="mini">שאלות שחוזרות הרבה – אם לא מצאתם, כתבו לנו בהערות ונכוון אתכם.</p>
+
+<div class="faq-item">
+<button class="faq-q" type="button" aria-expanded="false"><span>איזה נתח מומלץ לתנור?</span><span class="chev">+</span></button>
+<div class="faq-a">לתנור ובישול ארוך בדרך כלל נמליץ על <strong>כתף מס׳ 5</strong> / <strong>אוסובוקו</strong> / <strong>צוואר כבש</strong> / <strong>שוק כבש</strong>. כתבו בהערות מה אתם עושים ונכוון.</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q" type="button" aria-expanded="false"><span>מה הכי מתאים לסטייק?</span><span class="chev">+</span></button>
+<div class="faq-a">לרוב הולכים על <strong>אנטריקוט</strong> / <strong>טיבון</strong> / <strong>פיקנייה</strong>. רוצים רך יותר או שומני יותר? כתבו ונכוון.</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q" type="button" aria-expanded="false"><span>אפשר לבקש חיתוך מיוחד?</span><span class="chev">+</span></button>
+<div class="faq-a">כן. כתבו בהערות אם אתם רוצים קוביות/טחון/סטייקים/נתח שלם, וגם לאיזה בישול.</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q" type="button" aria-expanded="false"><span>איך מזמינים פה?</span><span class="chev">+</span></button>
+<div class="faq-a">מוסיפים מוצרים לסל, בוחרים <strong>איסוף עצמי</strong> או <strong>משלוח</strong> (לפי זמינות), ולוחצים על <strong>שליחה ל־WhatsApp</strong>.</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q" type="button" aria-expanded="false"><span>כמה זמן לוקח להכין הזמנה?</span><span class="chev">+</span></button>
+<div class="faq-a">בדרך כלל מהר, אבל בשעות עומס זה יכול לקחת יותר. אחרי שליחה בוואטסאפ נחזור אליכם כשמוכן.</div>
+</div>
+
+<div class="faq-item" style="margin-bottom:0;">
+<button class="faq-q" type="button" aria-expanded="false"><span>איפה כדאי לקנות בשר?</span><span class="chev">+</span></button>
+<div class="faq-a">הכי חשוב לקנות במקום שיש קצב שמכיר את הנתחים וחותך לפי הבישול שלכם. אצלנו בעספור – התאמה לפי צורך, לא רק מוצר.</div>
+</div>
+</section>
+
+<!-- פוטר (עספור בלבד) -->
+<footer class="site-footer" aria-label="פרטי סניף עספור">
+<div class="footer-row">
+<a class="footer-addr" id="dirLink" href="https://www.google.com/maps/place/%D7%90%D7%98%D7%9C%D7%99%D7%96+%D7%97%D7%9C%D7%99%D7%A1%D7%94+-+%D7%A2%D7%A1%D7%A4%D7%95%D7%A8%E2%80%AD/@32.8200223,34.9963156,785m/data=!3m2!1e3!4b1!4m6!3m5!1s0x151dbb94e561895b:0x5b96d4fb5bc6f766!8m2!3d32.8200178!4d34.993746!16s%2Fg%2F11y0b8tcb6?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
+<strong>כתובת:</strong>
+<span>רח׳ עספור 19, חיפה</span>
+</a>
+
+<div class="footer-hours"><strong>שעות פעילות:</strong> א׳, ג׳–שבת 9:00–18:00 | שני סגור</div>
+
+<div class="footer-social" aria-label="קישורים חברתיים">
+<a class="icon-link" href="https://www.instagram.com/halisa_butchery_asfor/" target="_blank" rel="noopener" aria-label="אינסטגרם">
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm-5 4.5A5.5 5.5 0 1 1 6.5 14 5.5 5.5 0 0 1 12 8.5Zm0 2A3.5 3.5 0 1 0 15.5 14 3.5 3.5 0 0 0 12 10.5ZM18 6.8a1.2 1.2 0 1 1-1.2-1.2A1.2 1.2 0 0 1 18 6.8Z"/>
+</svg>
+</a>
+<a class="icon-link" href="https://www.facebook.com/profile.php?id=61581369802461" target="_blank" rel="noopener" aria-label="פייסבוק">
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<path fill="currentColor" d="M13.5 22v-8h2.8l.4-3H13.5V9.1c0-.9.3-1.6 1.7-1.6h1.6V4.8c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5V11H7v3h2.8v8h3.7Z"/>
+</svg>
+</a>
+</div>
+</div>
+</footer>
+</div>
+
+<!-- כפתור סל צף (חייב להיות לפני הסקריפט כדי שה-binding לא יקבל null) -->
+<button id="cartFab" type="button" aria-label="מעבר לסל">
+<span class="badge" id="cartFabBadge">0</span>
+<span style="font-weight:800;">סל</span>
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<path fill="currentColor" d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2Zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2ZM7.16 14h9.92c.75 0 1.4-.41 1.74-1.03L21 7H6.21L5.27 5H2v2h2l3.6 7.59-1.35 2.44C5.52 18.37 6.48 20 8 20h12v-2H8l1.16-2Z"/>
+</svg>
+</button>
+
+<!-- Bottom Sheet (קטגוריה נפתחת מלמטה למעלה) -->
+<div id="sheetOverlay" class="sheet-overlay" hidden></div>
+<div id="sheet" class="sheet" role="dialog" aria-modal="true" aria-hidden="true">
+<div class="sheet-handle" aria-hidden="true"></div>
+<div class="sheet-head">
+<button id="sheetClose" class="sheet-close" type="button" aria-label="סגור">×</button>
+<div style="min-width:0;">
+<div class="sheet-title-row">
+<div id="sheetTitle" class="sheet-title"></div>
+<span id="sheetBadge" class="sheet-badge"></span>
+</div>
+<div id="sheetSubtitle" class="sheet-subtitle mini"></div>
+</div>
+</div>
+<div id="sheetMedia" class="sheet-media" hidden>
+<img id="sheetImg" class="sheet-img" alt="" />
+</div>
+<div id="sheetBody" class="sheet-body"></div>
+</div>
+
+<script>
+// וואטסאפ – עספור
+const WA_BASE = "https://wa.me/972549392888?text=";
+
+// נתונים (בלי הערות HTML בתוך ה-JS)
+const DATA = [
+{name:"עוף שלם", price:25, category:"עופות"},
+{name:"כבד עוף", price:30, category:"עופות"},
+{name:"לבבות", price:35, category:"עופות"},
+{name:"כרעיים", price:28, category:"עופות"},
+{name:"חזה עוף", price:40, category:"עופות"},
+{name:"שניצל", price:45, category:"עופות"},
+{name:"פילה עוף", price:48, category:"עופות"},
+{name:"פרגית בלי עור", price:50, category:"עופות"},
+{name:"פרגית עם עור", price:40, category:"עופות"},
+{name:"שוקיים", price:30, category:"עופות"},
+{name:"כנפיים", price:20, category:"עופות"},
+{name:"חזה הודו", price:45, category:"עופות"},
+{name:"כרעיים 4 קילו", price:100, category:"עופות", qtyMode:"none"},
+
+{name:"בשר טחון", price:66, category:"עגל"},
+{name:"זנב עגל", price:54, category:"עגל"},
+{name:"לשון עגל", price:75, category:"עגל"},
+{name:"שקדי עגל", price:150, category:"עגל"},
+{name:"נתח קצבים", price:149, category:"עגל"},
+{name:"בשר ראש", price:79, category:"עגל"},
+{name:"רגל עגל", price:50, category:"עגל"},
+{name:"כבד עגל", price:30, category:"עגל"},
+{name:"מוח עגל ליחידה", price:35, category:"עגל", qtyMode:"unit"},
+{name:"כתף מס' 5", price:95, category:"עגל"},
+{name:"אוסובוקו עגל", price:75, category:"עגל"},
+{name:"שייטל", price:109, category:"עגל"},
+{name:"בשר עגלה", price:80, category:"עגל"},
+
+{name:"צלעות טיבון", price:180, category:"סטייקים"},
+{name:"צלעות בייבי", price:249, category:"סטייקים"},
+{name:"דפי אסאדו", price:100, category:"סטייקים"},
+{name:"דפי אנטריקוט", price:159, category:"סטייקים"},
+{name:"רצועות ואסיו", price:139, category:"סטייקים"},
+{name:"פילה שייטל", price:130, category:"סטייקים"},
+{name:"אנטריקוט עגל", price:160, category:"סטייקים"},
+{name:"פילה עגל", price:200, category:"סטייקים"},
+{name:"סינטה", price:150, category:"סטייקים"},
+{name:"פיקנייה", price:129, category:"סטייקים"},
+{name:"אנטריקוט בלאק אנגוס", price:230, category:"סטייקים"},
+{name:"טיבון בלאק אנגוס", price:180, category:"סטייקים"},
+{name:"טומהוק", price:180, category:"סטייקים"},
+
+{name:"כבש בלי עצם", price:180, category:"כבש"},
+{name:"כבש עם עצם", price:129, category:"כבש"},
+{name:"לייה בלדי", price:120, category:"כבש"},
+{name:"שוק כבש", price:129, category:"כבש"},
+{name:"כבד כבש", price:50, category:"כבש"},
+{name:"שיפודי כבש", price:180, category:"כבש"},
+{name:"אוסובוקו כבש", price:130, category:"כבש"},
+{name:"צוור כבש", price:129, category:"כבש"},
+{name:"כתף כבש", price:129, category:"כבש"},
+
+{name:"עראיס", price:69, category:"מיוחדים"},
+{name:"המבורגר", price:75, category:"מיוחדים"},
+{name:"קבב", price:75, category:"מיוחדים"},
+{name:"סרסיסו", price:75, category:"מיוחדים"},
+{name:"לוליפופ", price:180, category:"מיוחדים"},
+{name:"מרגז חריף", price:75, category:"מיוחדים"},
+{name:"כנפיים מתובל", price:25, category:"מיוחדים"},
+{name:"עוף ממולה", price:49, category:"מיוחדים"},
+{name:"כבש ממולאים", price:139, category:"מיוחדים"},
+{name:"עגל ממולה", price:139, category:"מיוחדים"},
+{name:"שיפודי פרגית", price:69, category:"מיוחדים"},
+{name:"שיפודי לבבות", price:69, category:"מיוחדים"},
+
+{name:"עגל (שווארמה)", price:85, category:"שווארמה"},
+{name:"הודו נקבה", price:70, category:"שווארמה"},
+{name:"עוף (שווארמה)", price:45, category:"שווארמה"},
+{name:"שווארמה פרגית", price:50, category:"שווארמה"},
+{name:"כבש (שווארמה)", price:180, category:"שווארמה"}
+];
+
+// תמונות קטגוריות
+const ICONS = {
+"עופות": "Chicken.png",
+"עגל": "Veal.png",
+"סטייקים": "Steaks.png",
+"כבש": "Lamb.png",
+"מיוחדים": "Specials.png",
+"שווארמה": "Shawarma.png"
+};
+
+const desiredOrder = ["עופות","עגל","סטייקים","כבש","מיוחדים","שווארמה"];
+
+const cols = document.getElementById('cols');
+const q = document.getElementById('q');
+const sortSel = document.getElementById('sort');
+const countEl = document.getElementById('count');
+
+const cartList = document.getElementById('cartList');
+const copyBtn = document.getElementById('copyBtn');
+const waBtn = document.getElementById('waBtn');
+const clearBtn = document.getElementById('clearBtn');
+
+const notesArea = document.getElementById('notesArea');
+const addressBlock = document.getElementById('addressBlock');
+const addressArea = document.getElementById('addressArea');
+
+// Bottom Sheet elements
+const sheetOverlay = document.getElementById('sheetOverlay');
+const sheet = document.getElementById('sheet');
+const sheetClose = document.getElementById('sheetClose');
+const sheetTitle = document.getElementById('sheetTitle');
+const sheetSubtitle = document.getElementById('sheetSubtitle');
+const sheetBadge = document.getElementById('sheetBadge');
+const sheetMedia = document.getElementById('sheetMedia');
+const sheetImg = document.getElementById('sheetImg');
+const sheetBody = document.getElementById('sheetBody');
+
+let CURRENT_BY = new Map();
+let CURRENT_CMP = (a,b)=>0;
+
+// תמונת קטגוריה – דינמית בזמן גלילה בתוך ה-sheet
+let sheetScrollRaf = 0;
+function resetSheetImage(){
+if(!sheetImg) return;
+sheetImg.style.height = '140px';
+sheetImg.style.opacity = '1';
+sheetImg.style.transform = 'none';
+}
+function onSheetScroll(){
+if(!sheetBody || !sheetImg || sheetMedia?.hidden) return;
+if(sheetScrollRaf) return;
+sheetScrollRaf = requestAnimationFrame(()=>{
+const y = sheetBody.scrollTop || 0;
+const t = Math.min(1, y / 220);
+const h = 140 - (36 * t);
+const op = 1 - (0.12 * t);
+const ty = -8 * t;
+const sc = 1 - (0.03 * t);
+
+sheetImg.style.height = `${Math.round(h)}px`;
+sheetImg.style.opacity = String(op);
+sheetImg.style.transform = `translateY(${ty}px) scale(${sc})`;
+
+sheetScrollRaf = 0;
+});
+}
+function bindSheetScroll(){
+if(!sheetBody) return;
+sheetBody.removeEventListener('scroll', onSheetScroll);
+sheetBody.addEventListener('scroll', onSheetScroll, {passive:true});
+onSheetScroll();
+}
+function unbindSheetScroll(){
+if(!sheetBody) return;
+sheetBody.removeEventListener('scroll', onSheetScroll);
+if(sheetScrollRaf){ cancelAnimationFrame(sheetScrollRaf); sheetScrollRaf = 0; }
+resetSheetImage();
+}
+
+const fulfillmentLabels = Array.from(document.querySelectorAll('#fulfillmentWrap .radio'));
+const fulfillmentInputs = Array.from(document.querySelectorAll('input[name="fulfillment"]'));
+
+const LS_KEY = 'halisa_asfour_cart_v1';
+
+const cart = new Map();
+const keyOf = i => `${i.name}|${i.category}`;
+
+const isUnitItem = item => item.qtyMode === 'unit';
+const unitLabelOf = item => isUnitItem(item) ? 'יח׳' : 'ק"ג';
+
+const roundToStep = (n, step) => Math.round((Number(n)||0) / step) * step;
+
+const normalizeQty = (item, qty) => {
+if(isUnitItem(item)) return Math.max(0, Math.round(Number(qty)||0));
+return Math.max(0, roundToStep(qty, 0.5));
+};
+
+const fmtQty = (item, qty) => {
+const n = Number(qty)||0;
+const txt = isUnitItem(item) ? n.toFixed(0) : n.toFixed(1).replace(/\.0$/,'');
+return `${txt} ${unitLabelOf(item)}`;
+};
+
+const money = n => `₪ ${Number(n||0).toLocaleString('he-IL',{maximumFractionDigits:2})}`;
+
+function saveState(){
+try{
+const payload = {
+cart: Array.from(cart.values()).map(it=>({
+name: it.name,
+category: it.category,
+price: it.price,
+qty: it.qty,
+qtyMode: it.qtyMode || null
+})),
+notes: notesArea?.value || "",
+fulfillment: document.querySelector('input[name="fulfillment"]:checked')?.value || "",
+address: addressArea?.value || ""
+};
+localStorage.setItem(LS_KEY, JSON.stringify(payload));
+} catch(e){}
+}
+
+function loadState(){
+try{
+const raw = localStorage.getItem(LS_KEY);
+if(!raw) return;
+
+const payload = JSON.parse(raw);
+if(payload?.cart?.length){
+payload.cart.forEach(it=>{
+const k = `${it.name}|${it.category}`;
+cart.set(k, it);
+});
+}
+
+if(typeof payload.notes === 'string' && notesArea) notesArea.value = payload.notes;
+
+if(payload.fulfillment){
+const inp = document.querySelector(`input[name="fulfillment"][value="${payload.fulfillment}"]`);
+if(inp) inp.checked = true;
+} else {
+const def = document.querySelector(`input[name="fulfillment"][value="איסוף עצמי"]`);
+if(def) def.checked = true;
+}
+
+if(typeof payload.address === 'string' && addressArea) addressArea.value = payload.address;
+
+syncFulfillmentUI();
+renderCart();
+} catch(e){}
+}
+
+function syncFulfillmentUI(){
+const val = document.querySelector('input[name="fulfillment"]:checked')?.value || "";
+fulfillmentLabels.forEach(lbl=>{
+lbl.classList.toggle('is-active', lbl.dataset.radio === val);
+});
+
+if(addressBlock) addressBlock.style.display = (val === 'משלוח') ? 'flex' : 'none';
+saveState();
+}
+
+function addToCart(item, qty){
+const k = keyOf(item);
+const addQty = normalizeQty(item, qty);
+if(addQty <= 0) return;
+
+if(!cart.has(k)) cart.set(k, {...item, qty:0});
+const current = Number(cart.get(k).qty)||0;
+const next = normalizeQty(item, current + addQty);
+
+if(next <= 0) cart.delete(k);
+else cart.get(k).qty = next;
+
+// GA4: add_to_cart
+if(typeof gtag === 'function'){
+gtag('event', 'add_to_cart', {
+currency: 'ILS',
+value: (Number(item.price)||0) * (Number(addQty)||0),
+items: [{
+item_name: item.name,
+item_category: item.category,
+price: Number(item.price)||0,
+quantity: Number(addQty)||0,
+item_variant: unitLabelOf(item)
+}]
+});
+}
+
+renderCart();
+saveState();
+}
+
+function removeItem(item){
+// GA4: remove_from_cart
+if(typeof gtag === 'function'){
+const q = Number(item.qty)||0;
+gtag('event', 'remove_from_cart', {
+currency: 'ILS',
+value: (Number(item.price)||0) * q,
+items: [{
+item_name: item.name,
+item_category: item.category,
+price: Number(item.price)||0,
+quantity: q,
+item_variant: unitLabelOf(item)
+}]
+});
+}
+
+cart.delete(keyOf(item));
+renderCart();
+saveState();
+}
+
+function clearCart(){
+cart.clear();
+renderCart();
+saveState();
+}
+
+// ===== סל צף + גלילה + היילייט =====
+const cartFab = document.getElementById('cartFab');
+const cartFabBadge = document.getElementById('cartFabBadge');
+const cartBox = document.querySelector('aside.cart');
+
+function updateCartFab(){
+if(!cartFab || !cartFabBadge) return;
+const itemsCount = cart.size;
+cartFab.style.display = itemsCount > 0 ? 'flex' : 'none';
+cartFabBadge.textContent = String(itemsCount);
+}
+
+function flashCart(){
+if(!cartBox) return;
+cartBox.classList.remove('cart-flash');
+void cartBox.offsetWidth;
+cartBox.classList.add('cart-flash');
+}
+
+if(cartFab){
+cartFab.addEventListener('click', ()=>{
+if(!cartBox) return;
+cartBox.scrollIntoView({ behavior:'smooth', block:'start' });
+setTimeout(flashCart, 450);
+
+if(typeof gtag === 'function'){
+gtag('event', 'click_cart_fab', { event_category:'navigation', event_label:'Floating Cart Button' });
+}
+});
+}
+
+function renderCart(){
+if(!cartList) return;
+cartList.innerHTML = '';
+Array.from(cart.values()).forEach(it=>{
+const line = document.createElement('div');
+line.className='line';
+
+const left = document.createElement('div');
+left.innerHTML =
+`<div><strong>${it.name}</strong> <span class="mini">(${it.category})</span></div>
+<div class="mini">${money(it.price)} × ${fmtQty(it, it.qty)}</div>`;
+
+const priceEl = document.createElement('div');
+priceEl.className='mini';
+priceEl.textContent = money(it.price * (Number(it.qty)||0));
+
+const del = document.createElement('button');
+del.className='del';
+del.textContent='מחק';
+del.addEventListener('click', ()=> removeItem(it));
+
+line.append(left, priceEl, del);
+cartList.append(line);
+});
+
+updateCartFab();
+}
+
+function validateFulfillment(){
+const fulfillment = document.querySelector('input[name="fulfillment"]:checked')?.value || "";
+if(!fulfillment){
+alert("בחרו סוג הזמנה: איסוף עצמי או משלוח");
+return false;
+}
+if(fulfillment === 'משלוח'){
+const addr = (addressArea?.value||"").trim();
+if(!addr){
+alert("במשלוח חובה למלא כתובת למשלוח");
+addressArea?.focus();
+return false;
+}
+}
+return true;
+}
+
+function buildText(){
+const lines = [];
+lines.push("הזמנה לאטליז חליסה עספור:");
+
+const fulfillment = document.querySelector('input[name="fulfillment"]:checked')?.value || "";
+lines.push(`סוג הזמנה: ${fulfillment || "—"}`);
+
+if(fulfillment === 'משלוח'){
+const addr = (addressArea?.value||"").trim();
+if(addr) lines.push(`כתובת למשלוח: ${addr}`);
+}
+
+Array.from(cart.values()).forEach(it=>{
+lines.push(`• ${it.category} | ${it.name} × ${fmtQty(it, it.qty)} — ${money(it.price * (Number(it.qty)||0))}`);
+});
+
+const notes = (notesArea?.value||"").trim();
+if(notes){
+lines.push("");
+lines.push("הערות לקצב:");
+lines.push(notes);
+}
+
+lines.push("");
+lines.push("הערה: המחיר הסופי ייקבע אחרי שקילה בפועל. המחירון מתעדכן; יש לוודא תוקף בעת ההזמנה.");
+return lines.join("\n");
+}
+
+function fallbackCopy(text){
+const ta = document.createElement('textarea');
+ta.value = text;
+ta.setAttribute('readonly','');
+ta.style.position = 'fixed';
+ta.style.top = '-9999px';
+ta.style.opacity = '0';
+document.body.appendChild(ta);
+ta.select();
+try{ document.execCommand('copy'); }
+finally { document.body.removeChild(ta); }
+}
+
+async function copyToClipboard(text){
+if(navigator.clipboard && window.isSecureContext){
+await navigator.clipboard.writeText(text);
+return;
+}
+fallbackCopy(text);
+}
+
+if(copyBtn){
+copyBtn.addEventListener('click', async ()=>{
+if(!validateFulfillment()) return;
+
+const text = buildText();
+try{
+await copyToClipboard(text);
+copyBtn.textContent="הועתק ✓";
+setTimeout(()=>copyBtn.textContent="העתקת סל",900);
+} catch(e){
+copyBtn.textContent="לא הועתק";
+setTimeout(()=>copyBtn.textContent="העתקת סל",1200);
+}
+
+if(typeof gtag === 'function'){
+gtag('event', 'copy_cart', { event_category:'engagement', event_label:'Cart Copied' });
+}
+});
+}
+
+if(waBtn){
+waBtn.addEventListener('click', ()=>{
+if(!validateFulfillment()) return;
+
+const url = WA_BASE + encodeURIComponent(buildText());
+
+// נשאר אותו אירוע + פרמטרים שימושיים + beacon
+if(typeof gtag === 'function'){
+const cartValue = Array.from(cart.values()).reduce((s,it)=> s + (Number(it.price)||0) * (Number(it.qty)||0), 0);
+const cats = Array.from(new Set(Array.from(cart.values()).map(it=>it.category))).join(',');
+gtag('event', 'click_wa_button', {
+event_category:'engagement',
+event_label:'WhatsApp Send Button',
+transport_type:'beacon',
+currency:'ILS',
+value: cartValue,
+items_count: cart.size,
+categories: cats
+});
+}
+
+setTimeout(()=> window.open(url, "_blank"), 120);
+});
+}
+
+if(clearBtn){
+clearBtn.addEventListener('click', ()=>{
+clearCart();
+if(typeof gtag === 'function'){
+gtag('event', 'clear_cart', { event_category:'engagement', event_label:'Cart Cleared' });
+}
+});
+}
+
+notesArea?.addEventListener('input', saveState);
+addressArea?.addEventListener('input', saveState);
+
+fulfillmentInputs.forEach(inp=>{
+inp.addEventListener('change', ()=>{
+syncFulfillmentUI();
+if(typeof gtag === 'function'){
+gtag('event', 'select_fulfillment', { event_category:'interaction', event_label: inp.value });
+}
+});
+});
+
+function groupByCategory(rows){
+const m = new Map();
+rows.forEach(x=>{
+const c = x.category || "אחר";
+if(!m.has(c)) m.set(c, []);
+m.get(c).push(x);
+});
+return m;
+}
+
+function apply(){
+const term = (q?.value||"").trim().toLowerCase();
+const s = sortSel?.value;
+
+let rows = DATA.filter(x=>{
+if(!term) return true;
+const hay = [x.name||"", x.desc||"", x.category||""].join(" ").toLowerCase();
+return hay.includes(term);
+});
+
+const cmp = (a,b)=>{
+if (s==='name-asc') return (a.name||'').localeCompare(b.name||'','he');
+if (s==='name-desc') return (b.name||'').localeCompare(a.name||'','he');
+if (s==='price-asc') return (a.price??Infinity) - (b.price??Infinity);
+if (s==='price-desc')return (b.price??-Infinity) - (a.price??-Infinity);
+return 0;
+};
+
+render(rows, cmp);
+}
+
+function openSheet(cat, items){
+if(!sheet || !sheetOverlay || !sheetBody) return;
+
+const list = (items || []).slice();
+sheetTitle.textContent = cat;
+sheetSubtitle.textContent = `${list.length.toLocaleString('he-IL')} פריטים`;
+sheetBody.innerHTML = '';
+try{ sheetBody.scrollTop = 0; } catch(e){}
+resetSheetImage();
+unbindSheetScroll();
+
+const iconName = ICONS[cat] || null;
+if(sheetMedia && sheetImg && iconName){
+sheetImg.src = iconName;
+sheetImg.alt = cat;
+sheetMedia.hidden = false;
+bindSheetScroll();
+} else if(sheetMedia){
+sheetMedia.hidden = true;
+unbindSheetScroll();
+}
+
+if(sheetBadge){
+if(cat === 'עופות'){
+sheetBadge.textContent = 'המשקל כולל עצמות';
+sheetBadge.classList.add('is-on');
+} else {
+sheetBadge.textContent = '';
+sheetBadge.classList.remove('is-on');
+}
+}
+
+list.forEach(item=>{
+const card = document.createElement('div');
+card.className = 'item-card';
+
+const top = document.createElement('div');
+top.className = 'item-top';
+
+const info = document.createElement('div');
+info.className = 'item-info';
+
+const name = document.createElement('div');
+name.className = 'item-name';
+name.textContent = item.name;
+
+const meta = document.createElement('div');
+meta.className = 'item-meta';
+
+const price = document.createElement('div');
+price.className = 'item-price';
+price.textContent = money(item.price);
+
+meta.appendChild(price);
+
+if(item.qtyMode === 'unit'){
+const unit = document.createElement('span');
+unit.className = 'item-unit';
+unit.textContent = 'ליחידה';
+meta.appendChild(unit);
+}
+
+info.append(name, meta);
+
+const isUnit = item.qtyMode === 'unit';
+const isNone = item.qtyMode === 'none';
+const step = isUnit ? 1 : 0.5;
+const unitLbl = isUnit ? 'יח׳' : 'ק"ג';
+
+let current = isNone ? 1 : step;
+
+const controls = document.createElement('div');
+controls.className = 'item-controls';
+
+const stepper = document.createElement('div');
+stepper.className = 'stepper';
+
+const minus = document.createElement('button');
+minus.type = 'button';
+minus.className = 'step-btn';
+minus.textContent = '–';
+
+const val = document.createElement('div');
+val.className = 'step-val';
+
+const plus = document.createElement('button');
+plus.type = 'button';
+plus.className = 'step-btn';
+plus.textContent = '+';
+
+const renderVal = ()=>{
+const txt = isUnit ? current.toFixed(0) : current.toFixed(1).replace(/\.0$/,'');
+val.textContent = `${txt} ${unitLbl}`;
+};
+
+const add = document.createElement('button');
+add.type = 'button';
+add.className = 'add-mini';
+
+const updateAdd = ()=>{
+const normalized = isNone ? 1 : normalizeQty(item, current);
+const total = (Number(item.price)||0) * (Number(normalized)||0);
+add.innerHTML = `<span class="add-mini__price">${money(total)}</span><span class="add-mini__label">הוספה להזמנה</span>`;
+add.disabled = (!isNone && normalized <= 0);
+};
+
+if(!isNone){
+renderVal();
+stepper.append(minus, val, plus);
+
+minus.addEventListener('click', ()=>{
+current = Math.max(0, roundToStep(current - step, step));
+renderVal();
+updateAdd();
+});
+plus.addEventListener('click', ()=>{
+current = roundToStep(current + step, step);
+renderVal();
+updateAdd();
+});
+
+controls.appendChild(stepper);
+}
+
+updateAdd();
+
+add.addEventListener('click', ()=>{
+if(isNone){
+addToCart(item, 1);
+updateAdd();
+return;
+}
+const normalized = normalizeQty(item, current);
+if(normalized > 0) addToCart(item, normalized);
+current = step;
+renderVal();
+updateAdd();
+});
+
+controls.appendChild(add);
+
+top.appendChild(info);
+top.appendChild(controls);
+
+card.append(top);
+sheetBody.appendChild(card);
+});
+
+document.body.classList.add('sheet-open');
+sheetOverlay.hidden = false;
+sheetOverlay.classList.add('is-open');
+sheet.classList.add('is-open');
+sheet.setAttribute('aria-hidden','false');
+
+if(typeof gtag === 'function'){
+gtag('event', 'open_category_sheet', { event_category:'navigation', event_label: cat });
+}
+}
+
+function closeSheet(){
+if(!sheet || !sheetOverlay) return;
+unbindSheetScroll();
+sheet.classList.remove('is-open');
+sheetOverlay.classList.remove('is-open');
+sheet.setAttribute('aria-hidden','true');
+document.body.classList.remove('sheet-open');
+setTimeout(()=>{ sheetOverlay.hidden = true; }, 260);
+}
+
+function openCategory(cat){
+const items = (CURRENT_BY.get(cat) || []).slice().sort(CURRENT_CMP);
+openSheet(cat, items);
+}
+
+if(sheetClose) sheetClose.addEventListener('click', closeSheet);
+if(sheetOverlay) sheetOverlay.addEventListener('click', closeSheet);
+window.addEventListener('keydown', (e)=>{
+if(e.key === 'Escape' && sheet?.classList.contains('is-open')) closeSheet();
+});
+
+function toggleSection(section, h2, cat){
+openCategory(cat);
+h2.setAttribute('aria-expanded', 'false');
+}
+
+function render(rows, cmp){
+CURRENT_CMP = cmp;
+if(countEl) countEl.textContent = `${rows.length.toLocaleString('he-IL')} פריטים`;
+const by = groupByCategory(rows);
+CURRENT_BY = by;
+const rest = Array.from(by.keys())
+.filter(c=>!desiredOrder.includes(c))
+.sort((a,b)=>a.localeCompare(b,'he'));
+const order = [...desiredOrder.filter(c=>by.has(c)), ...rest];
+
+if(cols) cols.innerHTML = '';
+
+order.forEach(cat=>{
+const section = document.createElement('section');
+section.className = 'cat collapsed';
+
+const h2 = document.createElement('h2');
+h2.setAttribute('role','button');
+h2.setAttribute('tabindex','0');
+h2.setAttribute('aria-expanded','false');
+
+const iconName = ICONS[cat] || null;
+if(iconName){
+h2.innerHTML = `
+<img class="cat-img" loading="lazy" src="${iconName}" alt="${cat}" />
+<span>${cat}</span>
+`;
+} else {
+h2.textContent = cat;
+}
+
+section.appendChild(h2);
+
+const list = document.createElement('div');
+list.className='list';
+section.appendChild(list);
+cols?.appendChild(section);
+
+h2.addEventListener('click', ()=> toggleSection(section, h2, cat));
+h2.addEventListener('keydown', (e)=>{
+if(e.key === 'Enter' || e.key === ' '){
+e.preventDefault();
+toggleSection(section, h2, cat);
+}
+});
+});
+}
+
+// init
+loadState();
+if(!document.querySelector('input[name="fulfillment"]:checked')){
+const def = document.querySelector(`input[name="fulfillment"][value="איסוף עצמי"]`);
+if(def) def.checked = true;
+syncFulfillmentUI();
+} else {
+syncFulfillmentUI();
+}
+
+apply();
+renderCart();
+
+q?.addEventListener('input', ()=>{
+apply();
+if(typeof gtag === 'function' && q.value.trim()){
+gtag('event', 'search', { event_category:'interaction', event_label: q.value.trim() });
+}
+});
+
+sortSel?.addEventListener('change', apply);
+
+// ===== Analytics: ניווט למפות + FAQ =====
+const dirLink = document.getElementById('dirLink');
+if(dirLink){
+dirLink.addEventListener('click', ()=>{
+if(typeof gtag === 'function'){
+gtag('event', 'click_directions', {
+event_category: 'engagement',
+event_label: 'Google Maps Directions',
+transport_type: 'beacon'
+});
+}
+});
+}
+
+const faqItems = Array.from(document.querySelectorAll('.faq-item'));
+faqItems.forEach((it, idx)=>{
+const btn = it.querySelector('.faq-q');
+const ans = it.querySelector('.faq-a');
+if(!btn || !ans) return;
+
+btn.addEventListener('click', ()=>{
+const isOpen = it.classList.toggle('is-open');
+btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+const chev = btn.querySelector('.chev');
+if(chev) chev.textContent = isOpen ? '−' : '+';
+
+if(isOpen && typeof gtag === 'function'){
+const qTxt = (btn.textContent || '').replace(/[\+\-]/g,'').trim();
+gtag('event', 'faq_open', {
+event_category: 'engagement',
+event_label: qTxt || `FAQ ${idx+1}`,
+transport_type: 'beacon'
+});
+}
+});
+});
+
+// ===== Smoke tests =====
+(function runSmokeTests(){
+const required = ['cols','q','sort','count','cartList','copyBtn','waBtn','clearBtn','notesArea','addressArea','fulfillmentWrap','cartFab','cartFabBadge','sheet','sheetOverlay','sheetBody'];
+const missing = required.filter(id=>!document.getElementById(id));
+console.assert(missing.length === 0, 'Missing DOM elements:', missing);
+console.assert(typeof addToCart === 'function' && typeof renderCart === 'function', 'Core functions missing');
+})();
+</script>
 </body>
 </html>
